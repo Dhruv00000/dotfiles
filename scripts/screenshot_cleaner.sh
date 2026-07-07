@@ -1,0 +1,1 @@
+find /home/dhruv/Pictures/Screenshots/ -type f -mtime +28 | xargs rm
