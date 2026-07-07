@@ -1,0 +1,36 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+
+
+[palettes.matugen]
+primary = "{{colors.primary.default.hex}}"
+surface = "{{colors.surface.default.hex}}"
+error = "{{colors.error.default.hex}}"
+
+palette = "matugen"
+
+
+[package]
+disabled = true
+
+[character]
+success_symbol = '[➜](bold green) '
+error_symbol = '[✗](bold red) '
+
+[cmd_duration]
+min_time = 0
+show_milliseconds = true
+format = '[$duration](bold yellow)'
+
+[directory]
+truncation_length = 5
+truncation_symbol = '../'
+truncate_to_repo = false
+
+[shell]
+disabled = false
+
+[status]
+disabled = false
+format = '[exit code: $status ]($style)'

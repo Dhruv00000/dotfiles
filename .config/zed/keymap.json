@@ -1,0 +1,326 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      // "shift shift": "file_finder::Toggle"
+    },
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      // "j k": "vim::NormalBefore"
+    },
+  },
+  {
+    "context": "(vim_mode == helix_normal || vim_mode == helix_select) && !menu",
+    "bindings": {
+      "a": "vim::WrappingLeft",
+    },
+  },
+  {
+    "context": "(vim_mode == helix_normal || vim_mode == helix_select) && !menu",
+    "unbind": {
+      "h": "vim::WrappingLeft",
+    },
+  },
+  {
+    "context": "ThreadsSidebar && !Editor",
+    "unbind": {
+      "h": "menu::SelectParent",
+    },
+  },
+  {
+    "context": "OutlinePanel && not_editing",
+    "unbind": {
+      "h": "outline_panel::CollapseSelectedEntry",
+    },
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "unbind": {
+      "h": "project_panel::CollapseSelectedEntry",
+    },
+  },
+  {
+    "context": "SettingsWindow > NavigationMenu && !search",
+    "unbind": {
+      "h": "settings_editor::CollapseNavEntry",
+    },
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "a": "vim::WrappingLeft",
+    },
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "a": "vim::WrappingLeft",
+      "d": "vim::WrappingRight",
+      "left": "vim::WrappingLeft",
+      "right": "vim::WrappingRight",
+    },
+  },
+  {
+    "context": "VimControl && !menu",
+    "unbind": {
+      "h": "vim::Left",
+    },
+  },
+  {
+    "context": "ThreadsSidebar > Editor && VimControl && vim_mode == normal",
+    "bindings": {
+      "s": "editor::MoveDown",
+    },
+  },
+  {
+    "context": "ThreadsSidebar > Editor && VimControl && vim_mode == normal",
+    "unbind": {
+      "j": "editor::MoveDown",
+    },
+  },
+  {
+    "context": "GitPanel && ChangesList && !GitBranchSelector",
+    "unbind": {
+      "j": "menu::SelectNext",
+    },
+  },
+  {
+    "context": "FileHistoryView",
+    "unbind": {
+      "j": "menu::SelectNext",
+    },
+  },
+  {
+    "context": "NotebookEditor && notebook_mode == command",
+    "unbind": {
+      "j": "menu::SelectNext",
+    },
+  },
+  {
+    "context": "ThreadsSidebar && !Editor",
+    "unbind": {
+      "j": "menu::SelectNext",
+    },
+  },
+  {
+    "context": "NotebookEditor > Editor && VimControl && vim_mode == normal",
+    "unbind": {
+      "j": "notebook::NotebookMoveDown",
+    },
+  },
+  {
+    "context": "SettingsWindow > NavigationMenu && !search",
+    "unbind": {
+      "j": "settings_editor::FocusNextNavEntry",
+    },
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "s": "vim::Down",
+    },
+  },
+  {
+    "context": "VimControl && !menu",
+    "unbind": {
+      "j": "vim::Down",
+    },
+  },
+  {
+    "context": "VimControl && vim_mode == helix_normal && !menu && !BufferSearchBar",
+    "bindings": {
+      "s": [
+        "vim::Down",
+        {
+          "display_lines": true,
+        },
+      ],
+    },
+  },
+  {
+    "context": "VimControl && vim_mode == helix_normal && !menu && !BufferSearchBar",
+    "unbind": {
+      "j": [
+        "vim::Down",
+        {
+          "display_lines": true,
+        },
+      ],
+    },
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "unbind": {
+      "j": "vim::MenuSelectNext",
+    },
+  },
+  {
+    "context": "OutlinePanel && not_editing",
+    "unbind": {
+      "j": "vim::MenuSelectNext",
+    },
+  },
+  {
+    "context": "GitGraph && !GitGraphSearchBar",
+    "unbind": {
+      "j": "vim::MenuSelectNext",
+    },
+  },
+  {
+    "context": "ThreadsSidebar > Editor && VimControl && vim_mode == normal",
+    "bindings": {
+      "w": "editor::MoveUp",
+    },
+  },
+  {
+    "context": "ThreadsSidebar > Editor && VimControl && vim_mode == normal",
+    "unbind": {
+      "k": "editor::MoveUp",
+    },
+  },
+  {
+    "context": "GitPanel && ChangesList && !GitBranchSelector",
+    "unbind": {
+      "k": "menu::SelectPrevious",
+    },
+  },
+  {
+    "context": "FileHistoryView",
+    "unbind": {
+      "k": "menu::SelectPrevious",
+    },
+  },
+  {
+    "context": "NotebookEditor && notebook_mode == command",
+    "unbind": {
+      "k": "menu::SelectPrevious",
+    },
+  },
+  {
+    "context": "ThreadsSidebar && !Editor",
+    "unbind": {
+      "k": "menu::SelectPrevious",
+    },
+  },
+  {
+    "context": "NotebookEditor > Editor && VimControl && vim_mode == normal",
+    "unbind": {
+      "k": "notebook::NotebookMoveUp",
+    },
+  },
+  {
+    "context": "SettingsWindow > NavigationMenu && !search",
+    "unbind": {
+      "k": "settings_editor::FocusPreviousNavEntry",
+    },
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "unbind": {
+      "k": "vim::MenuSelectPrevious",
+    },
+  },
+  {
+    "context": "OutlinePanel && not_editing",
+    "unbind": {
+      "k": "vim::MenuSelectPrevious",
+    },
+  },
+  {
+    "context": "GitGraph && !GitGraphSearchBar",
+    "unbind": {
+      "k": "vim::MenuSelectPrevious",
+    },
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "w": "vim::Up",
+    },
+  },
+  {
+    "context": "VimControl && !menu",
+    "unbind": {
+      "k": "vim::Up",
+    },
+  },
+  {
+    "context": "VimControl && vim_mode == helix_normal && !menu && !BufferSearchBar",
+    "bindings": {
+      "w": [
+        "vim::Up",
+        {
+          "display_lines": true,
+        },
+      ],
+    },
+  },
+  {
+    "context": "VimControl && vim_mode == helix_normal && !menu && !BufferSearchBar",
+    "unbind": {
+      "k": [
+        "vim::Up",
+        {
+          "display_lines": true,
+        },
+      ],
+    },
+  },
+  {
+    "context": "ThreadsSidebar && !Editor",
+    "unbind": {
+      "l": "menu::SelectChild",
+    },
+  },
+  {
+    "context": "OutlinePanel && not_editing",
+    "unbind": {
+      "l": "outline_panel::ExpandSelectedEntry",
+    },
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "unbind": {
+      "l": "project_panel::ExpandSelectedEntry",
+    },
+  },
+  {
+    "context": "SettingsWindow > NavigationMenu && !search",
+    "unbind": {
+      "l": "settings_editor::ExpandNavEntry",
+    },
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "d": "vim::WrappingRight",
+    },
+  },
+  {
+    "context": "VimControl && !menu",
+    "unbind": {
+      "l": "vim::Right",
+    },
+  },
+  {
+    "context": "(vim_mode == helix_normal || vim_mode == helix_select) && !menu",
+    "bindings": {
+      "d": "vim::WrappingRight",
+    },
+  },
+  {
+    "context": "(vim_mode == helix_normal || vim_mode == helix_select) && !menu",
+    "unbind": {
+      "l": "vim::WrappingRight",
+    },
+  }
+]

@@ -1,0 +1,171 @@
+//TODO: game mode, clipboard
+
+
+prefer-no-csd
+
+
+input {
+    touchpad {
+        tap
+        natural-scroll
+    }
+}
+
+
+cursor {
+    xcursor-theme "Bibata-Modern-Ice"
+    xcursor-size 35
+}
+
+
+environment {
+    QT_QPA_PLATFORMTHEME "qt6ct"
+    QT_QPA_PLATFORM "wayland;xcb"
+
+    LANG "en_IN.UTF-8"
+    LC_ALL "en_IN.UTF-8"
+    LC_CTYPE "en_IN.UTF-8"
+}
+
+
+layout {
+
+    default-column-width { proportion 1.0; }
+    center-focused-column "on-overflow"
+
+    focus-ring {
+        off
+    }
+
+    struts {
+        left -8
+        right -8
+        bottom -8
+        top -10
+    }
+
+    shadow {
+        off
+    }
+
+}
+
+
+output "eDP-1" {
+
+    mode "1920x1080@144"
+    variable-refresh-rate
+    focus-at-startup
+
+}
+
+
+spawn-at-startup "sunsetr"
+spawn-at-startup "swayidle"
+spawn-sh-at-startup "waypaper --random"
+spawn-sh-at-startup "~/scripts/screenshot_cleaner.sh"
+spawn-at-startup "plasma-polkit-agent"
+spawn-sh-at-startup "sleep 3 && matugen image ~/.config/matugen/wallpaper -m dark --source-color-index 0 --type scheme-fruit-salad && quickshell" // bugs out without the sleep command
+spawn-sh-at-startup "~/scripts/mega-watcher.sh"
+spawn-sh-at-startup "clean-history"
+spawn-sh-at-startup "sudo cachyos-rate-mirrors"
+spawn-sh-at-startup "upgrade_oh_my_zsh_custom"
+spawn-sh-at-startup "bongocat --watch-config"
+spawn-sh-at-startup "amixer set Capture toggle" // mute mic on startup
+
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+
+screenshot-path "~/Pictures/Screenshots/%Y-%m-%d %H-%M.png"
+
+
+switch-events {
+    lid-close { spawn "swaylock" "--color" "000000" "--show-failed-attempts" "--clock" "--indicator"; }
+}
+
+animations {
+    slowdown 1.2
+}
+
+
+gestures {
+    hot-corners {
+        off
+    }
+}
+
+
+binds {
+
+    Mod+Left { focus-column-or-monitor-left; }
+    Mod+Right { focus-column-or-monitor-right; }
+
+    Mod+K repeat=false { close-window; }
+
+    Alt+Space { spawn-sh "~/.config/rofi/launcher.sh || pkill rofi"; }
+
+    Mod+C repeat=false { spawn "zeditor"; }
+    Mod+Z repeat=false { spawn "zen-browser"; }
+    Mod+F repeat=false { spawn "thunar"; }
+    Mod+T repeat=false { spawn "kitty"; }
+
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+ -l 1.0"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-"; }
+    XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+    XF86AudioPlay        allow-when-locked=true { spawn-sh "playerctl play-pause"; }
+    XF86AudioStop        allow-when-locked=true { spawn-sh "playerctl stop"; }
+    XF86AudioPrev        allow-when-locked=true { spawn-sh "playerctl previous"; }
+    XF86AudioNext        allow-when-locked=true { spawn-sh "playerctl next"; }
+    XF86MonBrightnessUp allow-when-locked=true cooldown-ms=500 { spawn "brightnessctl" "--class=backlight" "set" "+5%"; }
+
+    // XF86MonBrightnessUp allow-when-locked=true cooldown-ms=500 { spawn-sh "notify-send -e -u low -h string:x-canonical-private-synchronous:brightness_osd -h int:value:$(brightnessctl -m | cut -d, -f4) 'Brightness' '$(brightnessctl -m | cut -d, -f4)'%"; }
+    XF86MonBrightnessDown allow-when-locked=true cooldown-ms=500 { spawn "brightnessctl" "--class=backlight" "set" "5%-"; }
+
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+6 { focus-workspace 6; }
+    Mod+7 { focus-workspace 7; }
+    Mod+8 { focus-workspace 8; }
+    Mod+9 { focus-workspace 9; }
+    Mod+Shift+1 { move-column-to-workspace 1; }
+    Mod+Shift+2 { move-column-to-workspace 2; }
+    Mod+Shift+3 { move-column-to-workspace 3; }
+    Mod+Shift+4 { move-column-to-workspace 4; }
+    Mod+Shift+5 { move-column-to-workspace 5; }
+    Mod+Shift+6 { move-column-to-workspace 6; }
+    Mod+Shift+7 { move-column-to-workspace 7; }
+    Mod+Shift+8 { move-column-to-workspace 8; }
+    Mod+Shift+9 { move-column-to-workspace 9; }
+
+    Mod+Shift+S repeat=false { screenshot; }
+
+    Mod+Ctrl+Delete allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+
+    Mod+Shift+E { spawn-sh "wlogout"; }
+
+    Mod+Escape repeat=false { spawn-sh "swaylock --color 000000 --show-failed-attempts --clock --indicator"; }
+
+}
+
+
+window-rule {
+    opacity 0.85
+}
+
+window-rule {
+    match app-id="dev.zed.Zed"
+    open-maximized true
+}
+
+blur {
+    on
+    passes 3
+    offset 3
+}

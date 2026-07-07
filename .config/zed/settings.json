@@ -1,0 +1,29 @@
+{
+  "format_on_save": "off",
+  "vim_mode": false,
+  "soft_wrap": "editor_width",
+  "cli_default_open_behavior": "existing_window",
+  "ui_font_size": 17.0,
+  "terminal": {
+    "font_size": 18.0
+  },
+  "icon_theme": {
+    "mode": "light",
+    "light": "Catppuccin Mocha",
+    "dark": "Catppuccin Mocha"
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "session": {
+    "trust_all_worktrees": true
+  },
+  "base_keymap": "VSCode",
+  "buffer_font_size": 16.0,
+  "buffer_font_fallbacks": [
+    "monospace"
+  ],
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "theme": "Tokyo Night"
+}
