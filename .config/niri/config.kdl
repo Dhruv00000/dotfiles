@@ -72,6 +72,7 @@ spawn-sh-at-startup "sudo cachyos-rate-mirrors"
 spawn-sh-at-startup "upgrade_oh_my_zsh_custom"
 spawn-sh-at-startup "bongocat --watch-config"
 spawn-sh-at-startup "amixer set Capture toggle" // mute mic on startup
+spawn-sh-at-startup "alsactl restore -f ~/.asound.state" // fix mic issues
 
 
 hotkey-overlay {

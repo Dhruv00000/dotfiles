@@ -10,10 +10,10 @@ alias package-search='yay -Ss'
 alias package-uninstall='yay -Rn'
 alias cat='bat'
 
-#	bindkey              '^I' menu-select
-#bindkey "$terminfo[kcbt]" menu-select
+
 zstyle ':autocomplete:*' add-semicolon no
-zstyle ':autocomplete:*' delay 0.5  # seconds (float)
+zstyle ':autocomplete:*' delay 0.5
+
 
 export ZSH="$HOME/.oh-my-zsh"
 plugins=(git zsh-autosuggestions fast-syntax-highlighting zsh-autocomplete auto-notify autoupdate zsh-safe-rm zsh-clean-history colored-man-pages-plus command-not-found)
@@ -21,9 +21,7 @@ plugins=(git zsh-autosuggestions fast-syntax-highlighting zsh-autocomplete auto-
 
 export AUTO_NOTIFY_THRESHOLD=20
 export AUTO_NOTIFY_CANCEL_ON_SIGINT=1
-
 export AUTO_NOTIFY_TITLE="Command %command finished executing"
-
 export COLORED_MAN_THEME=ansi
 
 
