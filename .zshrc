@@ -4,7 +4,6 @@ fastfetch
 eval "$(starship init zsh)"
 
 
-alias ls='ls -la'
 alias package-install='yay --needed -S'
 alias package-search='yay -Ss'
 alias package-uninstall='yay -Rn'
@@ -24,15 +23,16 @@ export AUTO_NOTIFY_CANCEL_ON_SIGINT=1
 export AUTO_NOTIFY_TITLE="Command %command finished executing"
 export COLORED_MAN_THEME=ansi
 
-
 source $ZSH/oh-my-zsh.sh
 
 
 alias rm='safe-rm -r'
+alias ls='ls -la'
 
+clean-history --remove-rare --quiet
 
 chpwd() {
-    ls
+    ls -la
 }
 
 eval "$(zoxide init zsh --cmd cd)"

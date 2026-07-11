@@ -4,8 +4,8 @@ add_newline = true
 
 
 [palettes.matugen]
-primary = "#d7c950"
-surface = "#0c160e"
+primary = "#50dbcf"
+surface = "#0b141b"
 error = "#ffb4ab"
 
 palette = "matugen"
