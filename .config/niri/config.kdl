@@ -157,15 +157,13 @@ binds {
 
 window-rule {
     opacity 0.85
-}
-
-window-rule {
-    match app-id="dev.zed.Zed"
-    open-maximized true
+    background-effect {
+        blur true
+        xray false
+    }
 }
 
 blur {
-    on
     passes 3
-    offset 3
+    offset 1
 }
