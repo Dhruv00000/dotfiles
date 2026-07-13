@@ -33,15 +33,10 @@ layout {
     default-column-width { proportion 1.0; }
     center-focused-column "on-overflow"
 
+    gaps 0
+
     focus-ring {
         off
-    }
-
-    struts {
-        left -8
-        right -8
-        bottom -8
-        top -10
     }
 
     shadow {
@@ -121,8 +116,6 @@ binds {
     XF86AudioPrev        allow-when-locked=true { spawn-sh "playerctl previous"; }
     XF86AudioNext        allow-when-locked=true { spawn-sh "playerctl next"; }
     XF86MonBrightnessUp allow-when-locked=true cooldown-ms=500 { spawn "brightnessctl" "--class=backlight" "set" "+5%"; }
-
-    // XF86MonBrightnessUp allow-when-locked=true cooldown-ms=500 { spawn-sh "notify-send -e -u low -h string:x-canonical-private-synchronous:brightness_osd -h int:value:$(brightnessctl -m | cut -d, -f4) 'Brightness' '$(brightnessctl -m | cut -d, -f4)'%"; }
     XF86MonBrightnessDown allow-when-locked=true cooldown-ms=500 { spawn "brightnessctl" "--class=backlight" "set" "5%-"; }
 
     Mod+1 { focus-workspace 1; }
