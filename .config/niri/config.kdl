@@ -74,7 +74,7 @@ hotkey-overlay {
 }
 
 
-screenshot-path "~/Pictures/Screenshots/%Y-%m-%d %H-%M.png"
+screenshot-path "~/Pictures/Screenshots/%Y-%m-%d-at-%H-%M.png"
 
 
 switch-events {
