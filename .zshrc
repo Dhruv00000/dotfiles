@@ -27,7 +27,7 @@ source $ZSH/oh-my-zsh.sh
 
 
 alias rm='safe-rm -r'
-alias ls='ls -la'
+alias ls='ls -a'
 
 clean-history --remove-rare --quiet
 
