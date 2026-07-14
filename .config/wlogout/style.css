@@ -5,15 +5,15 @@
 
 window {
     /* Uses GTK's built-in alpha function to apply 70% opacity to the dynamic hex color */
-    background-color: alpha(#1c1108, 0.7);
+    background-color: alpha(#1b1017, 0.7);
 }
 
 button {
     border-radius: 0;
-    border-color: #aa8b73;
-    text-decoration-color: #f6decd;
-    color: #f6decd;
-    background-color: #2a1d13;
+    border-color: #a48999;
+    text-decoration-color: #f2dde7;
+    color: #f2dde7;
+    background-color: #281c24;
     border-style: solid;
     border-width: 1px;
     background-repeat: no-repeat;
@@ -23,9 +23,9 @@ button {
 
 button:active,
 button:hover {
-    background-color: #ffb2bd;
+    background-color: #c7bfff;
     /* Added on_primary for the text color to ensure contrast when hovering */
-    color: #5f1127;
+    color: #2e2176;
     outline-style: none;
 }
 

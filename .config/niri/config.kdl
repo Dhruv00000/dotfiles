@@ -62,6 +62,7 @@ spawn-sh-at-startup "~/scripts/screenshot_cleaner.sh"
 spawn-at-startup "plasma-polkit-agent"
 spawn-sh-at-startup "sleep 3 && matugen image ~/.config/matugen/wallpaper -m dark --source-color-index 0 --type scheme-fruit-salad && quickshell" // bugs out without the sleep command
 spawn-sh-at-startup "~/scripts/mega-watcher.sh"
+spawn-sh-at-startup "~/scripts/trash_cleaner.sh"
 spawn-sh-at-startup "clean-history"
 spawn-sh-at-startup "sudo cachyos-rate-mirrors"
 spawn-sh-at-startup "upgrade_oh_my_zsh_custom"

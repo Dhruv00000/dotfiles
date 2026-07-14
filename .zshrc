@@ -7,6 +7,7 @@ eval "$(starship init zsh)"
 alias package-install='yay --needed -S'
 alias package-search='yay -Ss'
 alias package-uninstall='yay -Rn'
+
 alias cat='bat'
 
 
