@@ -33,7 +33,7 @@ alias ls='ls -a'
 clean-history --remove-rare --quiet
 
 chpwd() {
-    ls -la
+    ls -a
 }
 
 eval "$(zoxide init zsh --cmd cd)"
