@@ -1,0 +1,14 @@
+[Module-bluedevil]
+autoload=false
+
+[Module-browserintegrationdaemon]
+autoload=false
+
+[Module-freespacenotifier]
+autoload=false
+
+[Module-printmanager]
+autoload=false
+
+[Module-touchpad]
+autoload=false
