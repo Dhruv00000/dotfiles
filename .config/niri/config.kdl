@@ -157,7 +157,17 @@ window-rule {
     }
 }
 
+window-rule {
+    match app-id="dev.zed.Zed"
+    open-maximized false
+}
+
+window-rule {
+    match title="YouTube"
+    opacity 1.0
+}
+
 blur {
-    passes 2
+    passes 3
     offset 1
 }
