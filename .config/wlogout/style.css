@@ -4,31 +4,36 @@
 }
 
 window {
-    /* Uses GTK's built-in alpha function to apply 70% opacity to the dynamic hex color */
-    background-color: alpha(#1d1012, 0.7);
+    background-color: alpha(#172310, 0.7);
 }
 
 button {
-    border-radius: 0;
-    border-color: #ab888d;
-    text-decoration-color: #f7dcdf;
-    color: #f7dcdf;
-    background-color: #2a1c1e;
+    border-radius: 16px;            /* Turns the rigid boxes into clean, rounded cards */
+    border-color: #526d44;
+    text-decoration-color: #91eeb1;
+    color: #91eeb1;
+    background-color: alpha(#273b1c, 0.6); /* Softer base color so it doesn't blind you */
     border-style: solid;
-    border-width: 1px;
+    border-width: 2px;
+
+    margin: 20px;                   /* Creates crucial breathing room between buttons */
+
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 25%;
+    background-size: 28%;           /* Sightly bumped up icon size for better proportion */
+
+    transition: all 0.2s ease-in-out; /* Smooth fade effect when hovering */
 }
 
 button:active,
 button:hover {
-    background-color: #e7b4ff;
-    /* Added on_primary for the text color to ensure contrast when hovering */
-    color: #4a1765;
+    background-color: #3ad76b;     /* The vibrant accent now only triggers on hover */
+    color: #273b1c;
+    border-color: #3ad76b;
     outline-style: none;
 }
 
+/* Icon Paths */
 #lock {
     background-image: image(
         url("/usr/share/wlogout/icons/lock.png"),

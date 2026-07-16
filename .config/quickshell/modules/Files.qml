@@ -22,7 +22,7 @@ Item {
                 if (filesMenu.visible) { return ""; }
                 return "";
             }
-            color: Colors.colorOnSurface
+            color: "white"
         }
 
         MouseArea {
@@ -30,7 +30,7 @@ Item {
             hoverEnabled: true
             cursorShape: Qt.PointingHandCursor
 
-            onEntered: filesButton.color = "#22ffffff"
+            onEntered: filesButton.color = Colors.dim_color
             onExited: filesButton.color = "transparent"
 
             onClicked: { filesMenu.visible = !filesMenu.visible; }
@@ -91,7 +91,7 @@ Item {
             implicitWidth: 100
             implicitHeight: 100
             color: Colors.surface
-            border.color: Colors.colorOnSurface
+            border.color: "white"
             border.width: 2
 
             property string folderPath
@@ -100,7 +100,7 @@ Item {
             Text {
                 text: parent.folderSymbol
                 anchors.centerIn: parent
-                color: Colors.colorOnSurface
+                color: "white"
                 font.family: "FiraCode Nerd Font"
                 font.pixelSize: 40
             }
@@ -110,7 +110,7 @@ Item {
                 hoverEnabled: true
                 cursorShape: Qt.PointingHandCursor
 
-                onEntered: parent.color = "#22ffffff"
+                onEntered: parent.color = Colors.dim_color
                 onExited: parent.color = "transparent"
 
                 onClicked: {

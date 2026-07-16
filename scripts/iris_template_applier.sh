@@ -1,0 +1,1 @@
+iris ~/.config/iris/wallpaper_current --glass --dark 1 && mv ~/.cache/iris/colors-kitty.conf ~/.config/kitty/colors.conf && mv ~/.cache/iris/rofi.rasi ~/.config/rofi/colors/rofi.rasi && mv ~/.cache/iris/quickshell.qml ~/.config/quickshell/Colors.qml && mv ~/.cache/iris/starship.toml ~/.config/starship.toml && mv ~/.cache/iris/style.css ~/.config/wlogout/style.css

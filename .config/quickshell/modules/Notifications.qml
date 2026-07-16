@@ -26,7 +26,7 @@ Rectangle {
 
     CustomComponents.NerdIcon {
         id: icon
-        color: Colors.colorOnSurface
+        color: "white"
     }
 
     Process {
@@ -58,7 +58,7 @@ Rectangle {
         hoverEnabled: true
         cursorShape: Qt.PointingHandCursor
 
-        onEntered: notificationButton.color = "#22ffffff"
+        onEntered: notificationButton.color = Colors.dim_color
         onExited: notificationButton.color = "transparent"
 
         onClicked: {

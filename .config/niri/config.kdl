@@ -60,7 +60,7 @@ spawn-at-startup "swayidle"
 spawn-sh-at-startup "waypaper --random"
 spawn-sh-at-startup "~/scripts/screenshot_cleaner.sh"
 spawn-at-startup "plasma-polkit-agent"
-spawn-sh-at-startup "sleep 3 && matugen image ~/.config/matugen/wallpaper -m dark --source-color-index 0 --type scheme-fruit-salad && quickshell" // bugs out without the sleep command
+spawn-sh-at-startup "sleep 3 && quickshell" // the sleep 3 is there to ensure that the colour scheme generator does its work before quickshell starts.
 spawn-sh-at-startup "~/scripts/mega-watcher.sh"
 spawn-sh-at-startup "~/scripts/trash_cleaner.sh"
 spawn-sh-at-startup "clean-history"
@@ -158,6 +158,6 @@ window-rule {
 }
 
 blur {
-    passes 3
+    passes 2
     offset 1
 }

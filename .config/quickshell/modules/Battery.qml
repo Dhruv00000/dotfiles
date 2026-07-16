@@ -32,6 +32,7 @@ RowLayout {
             width: 3
             height: 8
             color: "#64748b"
+
         }
         Rectangle {
 
@@ -77,7 +78,7 @@ RowLayout {
     Text {
         text: batteryIcon.percentage * 100 + "%"
         horizontalAlignment: Text.AlignHCenter
-        color: Colors.colorOnSurface
+        color: "white"
         font.family: "JetBrainsMono Propo"
         font.weight: 500
         font.pixelSize: 15

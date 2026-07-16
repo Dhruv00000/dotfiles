@@ -4,31 +4,36 @@
 }
 
 window {
-    /* Uses GTK's built-in alpha function to apply 70% opacity to the dynamic hex color */
-    background-color: alpha({{colors.background.default.hex}}, 0.7);
+    background-color: alpha({bg}, 0.7);
 }
 
 button {
-    border-radius: 0;
-    border-color: {{colors.outline.default.hex}};
-    text-decoration-color: {{colors.on_surface.default.hex}};
-    color: {{colors.on_surface.default.hex}};
-    background-color: {{colors.surface_container.default.hex}};
+    border-radius: 16px;            /* Turns the rigid boxes into clean, rounded cards */
+    border-color: {dim};
+    text-decoration-color: {fg};
+    color: {fg};
+    background-color: alpha({surface}, 0.6); /* Softer base color so it doesn't blind you */
     border-style: solid;
-    border-width: 1px;
+    border-width: 2px;
+
+    margin: 20px;                   /* Creates crucial breathing room between buttons */
+
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 25%;
+    background-size: 28%;           /* Sightly bumped up icon size for better proportion */
+
+    transition: all 0.2s ease-in-out; /* Smooth fade effect when hovering */
 }
 
 button:active,
 button:hover {
-    background-color: {{colors.primary.default.hex}};
-    /* Added on_primary for the text color to ensure contrast when hovering */
-    color: {{colors.on_primary.default.hex}};
+    background-color: {accent};     /* The vibrant accent now only triggers on hover */
+    color: {surface};
+    border-color: {accent};
     outline-style: none;
 }
 
+/* Icon Paths */
 #lock {
     background-image: image(
         url("/usr/share/wlogout/icons/lock.png"),

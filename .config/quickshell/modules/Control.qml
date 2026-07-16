@@ -23,7 +23,7 @@ Item {
                 if (controlCenterMenu.visible) { return ""; }
                 return "";
             }
-            color: Colors.colorOnSurface
+            color: "white"
         }
 
         MouseArea {
@@ -31,7 +31,7 @@ Item {
             hoverEnabled: true
             cursorShape: Qt.PointingHandCursor
 
-            onEntered: controlCenterButton.color = "#22ffffff"
+            onEntered: controlCenterButton.color = Colors.dim_color
             onExited: controlCenterButton.color = "transparent"
 
             onClicked: { controlCenterMenu.visible = !controlCenterMenu.visible; }
@@ -84,7 +84,7 @@ Item {
 
                         Text {
                             text: ""
-                            color: Colors.colorOnSurface
+                            color: "white"
                             font.family: "FiraCode Nerd Font"
                             font.pixelSize: 50
                             anchors.centerIn: parent
@@ -96,7 +96,7 @@ Item {
                             hoverEnabled: true
                             cursorShape: Qt.PointingHandCursor
 
-                            onEntered: wifiTile.color = "#22ffffff"
+                            onEntered: wifiTile.color = Colors.dim_color
                             onExited: wifiTile.color = "transparent"
 
                             onClicked: {
@@ -115,7 +115,7 @@ Item {
 
                         Text {
                             text: "󰂯"
-                            color: Colors.colorOnSurface
+                            color: "white"
                             font.family: "FiraCode Nerd Font"
                             font.pixelSize: 50
                             anchors.centerIn: parent
@@ -126,7 +126,7 @@ Item {
                             hoverEnabled: true
                             cursorShape: Qt.PointingHandCursor
 
-                            onEntered: bluetoothTile.color = "#22ffffff"
+                            onEntered: bluetoothTile.color = Colors.dim_color
                             onExited: bluetoothTile.color = "transparent"
 
                             onClicked: {
@@ -196,7 +196,7 @@ Item {
                                 if (volumeComponent.volumeValue < 0.5) { return "󰖀"; }
                                 return "󰕾";
                             }
-                            color: Colors.colorOnSurface
+                            color: "white"
                             font.family: "FiraCode Nerd Font"
                             font.pixelSize: 26
                             anchors.centerIn: parent
@@ -207,7 +207,7 @@ Item {
                             hoverEnabled: true
                             cursorShape: Qt.PointingHandCursor
 
-                            onEntered: muteButton.color = "#22ffffff"
+                            onEntered: muteButton.color = Colors.dim_color
                             onExited: muteButton.color = "transparent"
 
                             onClicked: { muteToggleProcess.running = true; }
@@ -270,7 +270,7 @@ Item {
 
                         Text {
                             text: ""
-                            color: Colors.colorOnSurface
+                            color: "white"
                             font.family: "FiraCode Nerd Font"
                             font.pixelSize: 22
                             anchors.centerIn: parent
@@ -281,7 +281,7 @@ Item {
                             hoverEnabled: true
                             cursorShape: Qt.PointingHandCursor
 
-                            onEntered: mixerButton.color = "#22ffffff"
+                            onEntered: mixerButton.color = Colors.dim_color
                             onExited: mixerButton.color = "transparent"
 
                             onClicked: {
@@ -321,7 +321,7 @@ Item {
                     CustomComponents.Spacer {}
                     Text {
                         text: "󰃞"
-                        color: Colors.colorOnSurface
+                        color: "white"
                         font.family: "FiraCode Nerd Font"
                         font.pixelSize: 22
                     }
@@ -386,7 +386,7 @@ Item {
         component ControlCenterTile: Rectangle {
             color: Colors.surface
             radius: 10
-            border.color: Colors.colorOnSurface
+            border.color: "white"
             border.width: 2
             implicitHeight: 100
             implicitWidth: 100

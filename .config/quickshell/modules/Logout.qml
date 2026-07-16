@@ -19,7 +19,7 @@ Rectangle {
         hoverEnabled: true
         cursorShape: Qt.PointingHandCursor
 
-        onEntered: logoutButton.color = "#22ffffff"
+        onEntered: logoutButton.color = Colors.dim_color
         onExited: logoutButton.color = "transparent"
 
         onClicked: { Quickshell.execDetached(["wlogout"]); }
