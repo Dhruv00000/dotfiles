@@ -3,13 +3,12 @@
 add_newline = true
 
 
-[palettes.matugen]
+[palettes.iris]
 primary = "#4cd9e3"
 surface = "#0d141c"
 error = "#ffb4ab"
 
-palette = "matugen"
-
+palette = "iris"
 
 [package]
 disabled = true
@@ -29,7 +28,7 @@ truncation_symbol = '../'
 truncate_to_repo = false
 
 [shell]
-disabled = false
+disabled = true
 
 [status]
 disabled = false

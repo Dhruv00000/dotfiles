@@ -12,7 +12,7 @@ source $ZSH/oh-my-zsh.sh
 
 
 alias rm='safe-rm -r'
-alias ls='ls -a'
+alias ls='ls --all'
 alias cat='bat'
 
 alias package-install='yay --needed -S'
