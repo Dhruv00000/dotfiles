@@ -4,15 +4,15 @@
 }
 
 window {
-    background-color: alpha(#172310, 0.7);
+    background-color: alpha(#040404, 0.7);
 }
 
 button {
     border-radius: 16px;            /* Turns the rigid boxes into clean, rounded cards */
-    border-color: #526d44;
-    text-decoration-color: #91eeb1;
-    color: #91eeb1;
-    background-color: alpha(#273b1c, 0.6); /* Softer base color so it doesn't blind you */
+    border-color: #4e4848;
+    text-decoration-color: #fcd682;
+    color: #fcd682;
+    background-color: alpha(#1a1919, 0.6); /* Softer base color so it doesn't blind you */
     border-style: solid;
     border-width: 2px;
 
@@ -27,9 +27,9 @@ button {
 
 button:active,
 button:hover {
-    background-color: #3ad76b;     /* The vibrant accent now only triggers on hover */
-    color: #273b1c;
-    border-color: #3ad76b;
+    background-color: #feab7d;     /* The vibrant accent now only triggers on hover */
+    color: #1a1919;
+    border-color: #feab7d;
     outline-style: none;
 }
 
