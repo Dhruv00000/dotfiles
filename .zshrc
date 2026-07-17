@@ -11,9 +11,16 @@ zstyle ':autocomplete:*' delay 0.5 # stops the autocomplete plugin from ruining 
 source $ZSH/oh-my-zsh.sh
 
 
+source <(fzf --zsh)
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+export PATH="$PATH:/usr/share/fzf/"
+
+
 alias rm='safe-rm -r'
 alias ls='ls --all'
 alias cat='bat'
+alias fzf='fzf --style full --preview "fzf-preview.sh {}" --bind "focus:transform-header:file --brief {}"'
 
 alias package-install='yay --needed -S'
 alias package-search='yay -Ss'
