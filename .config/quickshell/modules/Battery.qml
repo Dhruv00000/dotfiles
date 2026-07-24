@@ -14,7 +14,7 @@ RowLayout {
 
         property var battery: UPower.displayDevice
         property var percentage: {
-            if (batteryIcon.battery && batteryIcon.battery.ready) { return batteryIcon.battery.percentage; }
+            if (batteryIcon.battery && batteryIcon.battery.ready) { return Math.round(batteryIcon.battery.percentage * 100); }
             return 0; // failsafe for when the battery percentage isnt available
         }
 
@@ -38,13 +38,13 @@ RowLayout {
 
             x: 2
             y: 2
-            width: batteryIcon.percentage * 28
+            width: batteryIcon.percentage * 0.28
             height: 16
             radius: 2
 
             color: {
-                if (batteryIcon.percentage < 0.3) { return "#ef4444"; }
-                if (batteryIcon.percentage < 0.5) { return "#eab308"; }
+                if (batteryIcon.percentage < 30) { return "#ef4444"; }
+                if (batteryIcon.percentage < 50) { return "#eab308"; }
                 return "#22c55e";
             }
 
@@ -61,7 +61,7 @@ RowLayout {
 
 
     Text {
-        readonly property bool isSmartCharged: batteryIcon.percentage <= 0.8 && batteryIcon.percentage >= 0.75
+        readonly property bool isSmartCharged: batteryIcon.percentage <= 80 && batteryIcon.percentage >= 75
         readonly property bool isCharging: batteryIcon.battery.Charging //TODO: 'Charging' is not the correct name of the required property
         text: {
             if (isSmartCharged) { return "✓"; }
@@ -76,7 +76,7 @@ RowLayout {
     }
 
     Text {
-        text: batteryIcon.percentage * 100 + "%"
+        text: batteryIcon.percentage + "%"
         horizontalAlignment: Text.AlignHCenter
         color: "white"
         font.family: "JetBrainsMono Propo"
