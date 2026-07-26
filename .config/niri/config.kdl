@@ -76,7 +76,7 @@ hotkey-overlay {
 
 
 switch-events {
-    lid-close { spawn "swaylock" "--color" "000000" "--show-failed-attempts" "--clock" "--indicator"; }
+    lid-close { spawn "sh" "-c" "niri msg action focus-workspace 9 && swaylock --color 000000 --show-failed-attempts --clock --indicator"; }
 }
 
 animations {
