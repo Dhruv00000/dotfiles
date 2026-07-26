@@ -1,7 +1,6 @@
 FILE="$HOME/Pictures/Screenshots/$(date +'%d_%m_%Y__%H_%M_%S').png"
 grim -g "$(slurp)" "$FILE" || exit 0
 
-wl-copy < "$FILE"
 
 ACTION=$(notify-send "Screenshot Captured" "Copied to clipboard" --icon="$FILE" --action="edit=Annotate" --action="lens=Google Lens" --expire-time=5000)
 case "$ACTION" in
@@ -20,3 +19,5 @@ case "$ACTION" in
         fi
         ;;
 esac
+
+wl-copy < "$FILE"

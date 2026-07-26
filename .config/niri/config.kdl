@@ -141,7 +141,7 @@ binds {
 
     Mod+Shift+E { spawn-sh "wlogout"; }
 
-    Mod+Escape repeat=false { spawn-sh "swaylock --color 000000 --show-failed-attempts --clock --indicator"; }
+    Mod+Escape repeat=false { spawn-sh "niri msg action focus-workspace 9 && swaylock --color 000000 --show-failed-attempts --clock --indicator"; }
 
 }
 
