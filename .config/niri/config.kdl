@@ -100,7 +100,7 @@ binds {
 
     Alt+Space { spawn-sh "~/.config/rofi/launcher.sh || pkill rofi"; }
 
-    Mod+C repeat=false { spawn "zeditor"; }
+    Mod+C repeat=false { spawn-sh "pgrep zed || zeditor"; }
     Mod+Z repeat=false { spawn "zen-browser"; }
     Mod+F repeat=false { spawn "thunar"; }
     Mod+T repeat=false { spawn "kitty"; }
