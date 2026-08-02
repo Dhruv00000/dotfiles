@@ -2,7 +2,7 @@ FILE="$HOME/Pictures/Screenshots/$(date +'%d_%m_%Y__%H_%M_%S').png"
 grim -g "$(slurp)" "$FILE" || exit 0
 
 
-ACTION=$(notify-send "Screenshot Captured" "Copied to clipboard" --icon="$FILE" --action="edit=annotate" --action="lens=search" --action="scroll=extend" --expire-time=5000)
+ACTION=$(notify-send "Screenshot Captured" "Copied to clipboard" --icon="$FILE" --action="edit=󰲶  annotate" --action="lens=  search" --action="scroll=  extend" --expire-time=5000)
 case "$ACTION" in
     "edit")
         satty --filename "$FILE" --output-filename "$FILE" --disable-notifications
