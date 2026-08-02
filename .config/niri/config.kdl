@@ -135,7 +135,7 @@ binds {
     Mod+Shift+8 { move-column-to-workspace 8; }
     Mod+Shift+9 { move-column-to-workspace 9; }
 
-    Mod+Shift+S repeat=false { spawn-sh "~/scripts/screenshot.sh"; }
+    Mod+Shift+S repeat=false { spawn-sh "~/scripts/screenshot_capturer.sh"; }
 
     Mod+Ctrl+Delete allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
