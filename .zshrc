@@ -23,7 +23,7 @@ alias cat='bat'
 alias fzf='fzf --style full --preview "fzf-preview.sh {}" --bind "focus:transform-header:file --brief {}"'
 
 alias package-install='yay --needed -S'
-alias package-search='yay -Ss'
+alias package-search='yay -s'
 alias package-uninstall='yay -Rn'
 
 
