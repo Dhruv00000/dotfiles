@@ -160,6 +160,11 @@ window-rule {
 }
 
 window-rule {
+    match app-id="jetbrains-studio"
+    open-fullscreen true
+}
+
+window-rule {
     match title="YouTube"
     opacity 1.0
 }
