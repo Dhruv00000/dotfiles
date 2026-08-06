@@ -135,6 +135,9 @@ binds {
     Mod+Shift+8 { move-column-to-workspace 8; }
     Mod+Shift+9 { move-column-to-workspace 9; }
 
+    Mod+Shift+Right { move-column-right; }
+    Mod+Shift+Left { move-column-left; }
+
     Mod+Shift+S repeat=false { spawn-sh "~/scripts/screenshot_capturer.sh"; }
 
     Mod+Ctrl+Delete allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
@@ -147,7 +150,7 @@ binds {
 
 
 window-rule {
-    opacity 0.85
+    opacity 0.80
     background-effect {
         blur true
         xray false
