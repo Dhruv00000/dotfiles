@@ -182,6 +182,6 @@ window-rule {
 }
 
 blur {
-    passes 3
+    passes 2
     offset 1
 }
