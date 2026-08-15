@@ -58,7 +58,7 @@ output "eDP-1" {
 spawn-at-startup "sunsetr"
 spawn-at-startup "swayidle"
 spawn-sh-at-startup "~/scripts/screenshot_cleaner.sh"
-spawn-at-startup "plasma-polkit-agent"
+spawn-sh-at-startup "systemctl --user start hyprpolkitagent"
 spawn-sh-at-startup "~/scripts/wallpaper_and_colour_scheme.sh"
 spawn-sh-at-startup "sleep 3 && quickshell" // the sleep 3 is there to ensure that the colour scheme generator does its work before quickshell starts.
 spawn-sh-at-startup "~/scripts/mega-watcher.sh"
@@ -150,7 +150,7 @@ binds {
 
 
 window-rule {
-    opacity 0.80
+    opacity 0.85
     background-effect {
         blur true
         xray false
@@ -184,4 +184,5 @@ window-rule {
 blur {
     passes 2
     offset 1
+    noise 0.1
 }

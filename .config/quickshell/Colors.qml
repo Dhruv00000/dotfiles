@@ -2,6 +2,6 @@ pragma Singleton
 import QtQuick
 
 QtObject {
-    readonly property color surface: "#33524d"
-    readonly property color dim_color: "#658a84"
+    readonly property color surface: "#191919"
+    readonly property color dim_color: "#456c4a"
 }

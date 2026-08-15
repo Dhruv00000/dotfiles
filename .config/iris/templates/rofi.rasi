@@ -1,5 +1,5 @@
 * {
-    background:     {bg};
+    background:     #191919;
     background-alt: {surface};
     foreground:     {fg};
     selected:       {accent};
