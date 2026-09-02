@@ -11,21 +11,21 @@ RowLayout {
 
     Process {
         id: wifiProcess
-        // command: ["sh", "-c", "nmcli -t -f active,ssid,signal dev wifi | grep '^yes' | cut -d: -f2- "]
+
         command: ["sh", "-c",
-                    "if nmcli -t -f TYPE,STATE dev | grep -q '^ethernet:connected'; then " +
+                    "if nmcli -t -f TYPE,STATE dev | grep --quiet '^ethernet:connected'; then " +
                     "  echo 'ethernet:100'; " +
                     "else " +
                     "  res=$(nmcli -t -f active,signal dev wifi | grep '^yes' | cut -d: -f2); " +
-                    "  [ -n \"$res\" ] && echo \"wifi:$res\"; " +
+                    "  if [ -n \"$res\" ]; then echo \"wifi:$res\"; else echo \"none:0\"; fi; " +
                     "fi"]
         running: true
 
         stdout: StdioCollector { id: commandOutput }
     }
     readonly property var outputParts: commandOutput.text.trim().split(":")
-    readonly property string connectionType: outputParts[0] || ""
-    readonly property int signalStrength: Number(commandOutput.text.split(":")[1].trim())
+    readonly property string connectionType: outputParts.length > 0 ? outputParts[0] : "none"
+    readonly property int signalStrength: outputParts.length > 1 ? (parseInt(outputParts[1]) || 0) : 0
     Timer {
         interval: 5000
         running: true
@@ -35,7 +35,7 @@ RowLayout {
 
     CustomComponents.NerdIcon {
 
-        Layout.alignment: Qt.AlignVCenter
+        Layout.alignment: Qt.ef4444AlignVCenter
 
         text: {
             if (networkModule.connectionType === "ethernet") {
@@ -47,6 +47,7 @@ RowLayout {
                 if (networkModule.signalStrength < 75) { return "󰤥"; }
                 return "󰤨";
             }
+            return "󰤫"
         }
 
         color: {
@@ -58,6 +59,7 @@ RowLayout {
                 if (networkModule.signalStrength < 50) { return "#eab308"; }
                 return "#22c55e";
             }
+            return "#ef4444"
         }
 
     }
