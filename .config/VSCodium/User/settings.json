@@ -1,0 +1,22 @@
+{
+    "explorer.confirmDelete": false,
+    "editor.fontFamily": "'JetbBrains'",
+    "editor.fontSize": 18,
+    "workbench.sideBar.location": "right",
+    "editor.mouseWheelZoom": true,
+    "workbench.sideBar.experimental.fontSize": 16,
+    "workbench.iconTheme": "catppuccin-mocha",
+    "python.analysis.typeCheckingMode": "standard",
+    "python.analysis.diagnosticMode": "workspace",
+    "ruff.lint.select": [
+        "F",
+        "B",
+        "I"
+    ],
+    "ruff.lint.ignore": [
+    "E",
+    "W"
+    ],
+    "workbench.colorTheme": "Nordavind"
+
+}
