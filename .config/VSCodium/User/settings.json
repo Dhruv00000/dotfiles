@@ -1,6 +1,6 @@
 {
     "explorer.confirmDelete": false,
-    "editor.fontFamily": "'JetbBrains'",
+    "editor.fontFamily": "FiraCode Nerd Font Mono",
     "editor.fontSize": 18,
     "workbench.sideBar.location": "right",
     "editor.mouseWheelZoom": true,
@@ -17,6 +17,18 @@
     "E",
     "W"
     ],
-    "workbench.colorTheme": "Nordavind"
-
+    "workbench.colorTheme": "Nordavind",
+    "files.autoSave": "afterDelay",
+    "editor.wordWrap": "on",
+    "editor.minimap.enabled": false,
+    "workbench.editorAssociations": {
+        "*.pdf": "default"
+    },
+    "editor.codeLensFontFamily": "FiraCode Nerd Font Mono",
+    "editor.inlayHints.fontFamily": "FiraCode Nerd Font Mono",
+    "terminal.integrated.fontFamily": "FiraCode Nerd Font",
+    "notebook.markup.fontFamily": "FiraCode Nerd Font Mono",
+    "notebook.output.fontFamily": "FiraCode Nerd Font Mono",
+    "errorLens.fontFamily": "FiraCode Nerd Font Mono",
+    "terminal.integrated.fontLigatures.enabled": true
 }

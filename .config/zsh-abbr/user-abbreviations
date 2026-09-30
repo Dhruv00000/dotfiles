@@ -1,0 +1,6 @@
+abbr -g "gr"="| grep"
+
+abbr "p install"="yay --needed -S"
+abbr "p query"="yay -Q | grep"
+abbr "p search"="yay -s"
+abbr "p uninstall"="yay -Rn"

@@ -6,7 +6,7 @@
 	<submenu></submenu>
 	<unique-id>1782223481041613-1</unique-id>
 	<command>/usr/bin/kitty %f</command>
-	<description>Example for a custom action</description>
+	<description>Open kitty with this directory as the current working directory</description>
 	<range></range>
 	<patterns>*</patterns>
 	<startup-notify/>

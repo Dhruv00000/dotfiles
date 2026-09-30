@@ -2,11 +2,10 @@
 
 add_newline = true
 
-
 [palettes.iris]
-primary = "#4cd9e3"
-surface = "#0d141c"
-error = "#ffb4ab"
+primary = "#c3d78d"
+surface = "{background}"
+error = "#d7bf8d"
 
 palette = "iris"
 
@@ -26,9 +25,6 @@ format = '[$duration](bold yellow)'
 truncation_length = 5
 truncation_symbol = '../'
 truncate_to_repo = false
-
-[shell]
-disabled = true
 
 [status]
 disabled = false
