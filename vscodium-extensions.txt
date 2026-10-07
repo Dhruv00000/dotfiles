@@ -1,0 +1,16 @@
+catppuccin.catppuccin-vsc-icons
+charliermarsh.ruff
+christian-kohler.path-intellisense
+dlasagno.rasi
+frankie.vscode-gutter-preview-frankie
+kamikillerto.vscode-colorize
+ms-python.debugpy
+ms-python.python
+ms-python.vscode-python-envs
+sapegin.todo-tomorrow
+tamasfe.even-better-toml
+texarkanine.termeleon
+theqtcompany.qt-core
+usernamehw.errorlens
+v1hz.kdl-v1
+yukina.nordavind

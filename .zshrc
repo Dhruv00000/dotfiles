@@ -58,9 +58,17 @@ EOF
 
     done
 }
-
 alias rm='modded_rm'
 alias rm_default='command rm'
+
+unarchive() {
+    for file in "$@"; do
+        local dir="$file"
+        dir="${dir%.tar.*}"
+        dir="${dir%.*}"
+        mkdir -p "$dir" && bsdtar -xf "$file" -C "$dir" && modded_rm "$file"
+    done
+}
 
 diff_wrapper() {
     diff --recursive --unified $1 $2 | diff-so-fancy

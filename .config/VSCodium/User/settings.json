@@ -22,7 +22,9 @@
     "editor.wordWrap": "on",
     "editor.minimap.enabled": false,
     "workbench.editorAssociations": {
-        "*.pdf": "default"
+        "{git,gitlens,chat-editing-snapshot-text-model,copilot,git-graph,git-graph-3}:/**/*.qrc": "default",
+        "*.pdf": "default",
+        "*.qrc": "qt-core.qrcEditor"
     },
     "editor.codeLensFontFamily": "FiraCode Nerd Font Mono",
     "editor.inlayHints.fontFamily": "FiraCode Nerd Font Mono",
@@ -30,5 +32,12 @@
     "notebook.markup.fontFamily": "FiraCode Nerd Font Mono",
     "notebook.output.fontFamily": "FiraCode Nerd Font Mono",
     "errorLens.fontFamily": "FiraCode Nerd Font Mono",
-    "terminal.integrated.fontLigatures.enabled": true
+    "terminal.integrated.fontLigatures.enabled": true,
+    "qt-core.additionalQtPaths": [
+        {
+            "name": "Qt-5.15.19-linux-g++-x86_64_from_PATH",
+            "path": "/usr/bin/qmake"
+        }
+    ],
+    "qt-core.showWelcomePageOnActivation": false
 }

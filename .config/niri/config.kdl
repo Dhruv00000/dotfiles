@@ -52,22 +52,10 @@ output "eDP-1" {
 }
 
 
-spawn-sh-at-startup "~/scripts/screenshot_cleaner.sh"
-spawn-sh-at-startup "~/scripts/colour_scheme_picker.sh"
-spawn-sh-at-startup "~/scripts/mega-watcher.sh"
-spawn-sh-at-startup "~/scripts/trash_cleaner.sh"
+spawn-sh-at-startup "~/scripts/autostart.sh" // Autostart commands had to be put into another script in order to use a mix of sequential and parallel execution (to avoid a race condition with the logging system), which niri's config doesn't allow.
 
-spawn-at-startup "sunsetr"
-spawn-at-startup "swayidle"
-spawn-sh-at-startup "quickshell"
-spawn-sh-at-startup "bongocat --watch-config"
-spawn-sh-at-startup "systemctl --user start hyprpolkitagent"
-
-spawn-sh-at-startup "clean-history"
-spawn-sh-at-startup "sudo cachyos-rate-mirrors"
-spawn-sh-at-startup "upgrade_oh_my_zsh_all"
 spawn-sh-at-startup "alsactl restore -f ~/.asound.state" // fixes mic issues
-spawn-sh-at-startup "rm -rf $ZSH_EVALCACHE_DIR"
+spawn-sh-at-startup "codium --list-extensions > ~/Projects/dotfiles/vscodium-extensions.txt" // Integrating my vscode extension list into my dotfiles.
 
 
 hotkey-overlay {
@@ -95,31 +83,33 @@ binds {
 
     Mod+Left { focus-column-or-monitor-left; }
     Mod+Right { focus-column-or-monitor-right; }
+    Mod+Down { focus-workspace-down; }
+    Mod+Up { focus-workspace-up; }
 
     Mod+K repeat=false { close-window; }
 
-    Alt+Space { spawn-sh "rofi -show drun -theme $HOME/.config/rofi/launcher.rasi || pkill rofi"; }
+    Alt+Space { spawn-sh "rofi -show drun -theme $HOME/.config/rofi/launcher.rasi || pkill rofi"; } // The first command throws an error if rofi is already running, so this keybind basically functions as a toggle for rofi.
 
     // If a keybind is pressed without shift, navigate to an already-running instance of the corresponding program. Otherwise, open a new instance. If shift is also pressed, then create a new instance of that program regardless of whether it is already running or not.
-    Mod+C repeat=false { spawn-sh "niri msg action focus-window --id $(niri msg windows | grep 'App ID: \"codium\"' --context 2 | head -n 1 | cut -d ' ' -f 3 | cut -d ':' -f 1) || codium"; }
+    Mod+C repeat=false { spawn-sh "~/scripts/app_opener.sh codium codium"; }
     Mod+Shift+C repeat=false { spawn "codium"; }
-    Mod+Z repeat=false { spawn-sh "niri msg action focus-window --id $(niri msg windows | grep 'App ID: \"zen\"' --context 2 | head -n 1 | cut -d ' ' -f 3 | cut -d ':' -f 1) || zen-browser"; }
+    Mod+Z repeat=false { spawn-sh "~/scripts/app_opener.sh zen zen-browser"; }
     Mod+Shift+Z repeat=false { spawn "zen-browser"; }
-    Mod+F repeat=false { spawn-sh "niri msg action focus-window --id $(niri msg windows | grep 'App ID: \"thunar\"' --context 2 | head -n 1 | cut -d ' ' -f 3 | cut -d ':' -f 1) || thunar"; }
+    Mod+F repeat=false { spawn-sh "~/scripts/app_opener.sh thunar thunar"; }
     Mod+Shift+F repeat=false { spawn "thunar"; }
-    Mod+T repeat=false { spawn-sh "niri msg action focus-window --id $(niri msg windows | grep 'App ID: \"kitty\"' --context 2 | head -n 1 | cut -d ' ' -f 3 | cut -d ':' -f 1) || kitty"; }
+    Mod+T repeat=false { spawn-sh "~/scripts/app_opener.sh kitty kitty"; }
     Mod+Shift+T repeat=false { spawn "kitty"; }
 
-    Mod+L repeat=false { spawn-sh "~/scripts/wifi_autologin.sh"; }
+    Mod+L repeat=false { spawn "~/scripts/wifi_autologin.sh"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+ -l 1.0"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-"; }
-    XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
-    XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
-    XF86AudioPlay        allow-when-locked=true { spawn-sh "playerctl play-pause"; }
-    XF86AudioStop        allow-when-locked=true { spawn-sh "playerctl stop"; }
-    XF86AudioPrev        allow-when-locked=true { spawn-sh "playerctl previous"; }
-    XF86AudioNext        allow-when-locked=true { spawn-sh "playerctl next"; }
+    XF86AudioMute allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    XF86AudioMicMute allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+    XF86AudioPlay allow-when-locked=true { spawn-sh "playerctl play-pause"; }
+    XF86AudioStop allow-when-locked=true { spawn-sh "playerctl stop"; }
+    XF86AudioPrev allow-when-locked=true { spawn-sh "playerctl previous"; }
+    XF86AudioNext allow-when-locked=true { spawn-sh "playerctl next"; }
     XF86MonBrightnessUp allow-when-locked=true cooldown-ms=500 { spawn "brightnessctl" "--class=backlight" "set" "+5%"; }
     XF86MonBrightnessDown allow-when-locked=true cooldown-ms=500 { spawn "brightnessctl" "--class=backlight" "set" "5%-"; }
 
@@ -145,22 +135,14 @@ binds {
     Mod+Shift+Right { move-column-right; }
     Mod+Shift+Left { move-column-left; }
 
-    Mod+Shift+S repeat=false { spawn-sh "~/scripts/screenshot_capturer.sh"; }
+    Mod+Shift+S repeat=false { spawn "~/scripts/screenshot_capturer.sh"; }
 
-    Mod+Ctrl+Delete allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+    Mod+Ctrl+Alt+Delete allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
-    Mod+Shift+E { spawn-sh "wlogout"; }
+    Mod+Shift+E { spawn "wlogout"; }
 
     Mod+Escape repeat=false { spawn-sh "niri msg action focus-workspace 9 && swaylock --color 000000 --show-failed-attempts --clock --indicator"; }
 
     Mod+Backspace repeat=false { spawn-sh "swaync-client --close-latest"; }
 
-}
-
-window-rule {
-    match title="Picture-in-Picture"
-    open-floating true
-    default-column-width { fixed 480; }
-    default-window-height { fixed 270; }
-    default-floating-position x=32 y=32 relative-to="bottom-right"
 }
