@@ -1,17 +1,25 @@
 #!/usr/bin/env bash
 
-echo "=== Startup log: $(date) ===" > "$HOME/startup_log.txt" # Clear the previous startup's log entries.
+echo -e "STARTUP LOG ($(date))\n\n" > "$HOME/system_log.txt" # Clear the previous startup's log entries.
 
-log_notification() {
-    ACTION=$(notify-send "Niri startup log" "Failed to $1." --wait --icon dialog-error --action="logfile=󱪗 Open log" --expire-time=5000)
-    if [[ -n $ACTION ]]; then
-        xdg-open ~/startup_log.txt
-    fi
-}
+# log_notification() {
+#     ACTION=$(notify-send "Niri startup log" "Failed to $1." --wait --icon dialog-error --action="logfile=󱪗 Open log" --expire-time=5000)
+#     if [[ -n $ACTION ]]; then
+#         xdg-open ~/system_log.txt
+#     fi
+# }
 
 run_app() {
+    local LABEL="$1"
     shift
-    ( "$@" >> "$HOME/startup_log.txt" 2>&1 || log_notification "$1" ) &
+    (
+        if ! "$@" >> "$HOME/system_log.txt" 2>&1; then
+            ACTION=$(notify-send "Niri startup log" "Failed to $LABEL." --wait --icon dialog-error --action="logfile=󱪗 Open log" --expire-time=5000)
+            if [[ "$ACTION" == "logfile" ]]; then
+                xdg-open "$HOME/system_log.txt"
+            fi
+        fi
+    ) &
 }
 
 run_app "set colour scheme" "$HOME/scripts/colour_scheme_picker.sh"

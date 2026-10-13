@@ -1,0 +1,77 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "logo": {
+    "type": "small",
+    "padding": {
+      "top": 3,
+      "right": 4
+    }
+  },
+  "display": {
+    "key": {
+      "type": "both"
+    }
+  },
+  "modules": [
+    {
+      "type": "title",
+      "key": " ",
+      "keyIcon": ""
+    },
+    {
+      "type": "separator",
+      "string": "-"
+    },
+    {
+      "type": "os",
+      "keyIcon": ""
+    },
+    {
+      "type": "bootmgr",
+      "keyIcon": ""
+    },
+    {
+      "type": "kernel",
+      "keyIcon": ""
+    },
+    {
+      "type": "initsystem",
+      "keyIcon": "󰿄"
+    },
+    {
+      "type": "shell",
+      "keyIcon": ""
+    },
+    {
+      "type": "lm",
+      "keyIcon": "󰧨"
+    },
+    {
+      "type": "wm",
+      "keyIcon": "",
+      "detectPlugin": true
+    },
+    {
+      "type": "terminal",
+      "keyIcon": ""
+    },
+    {
+      "type": "disk",
+      "key": "File System",
+      "format": "{filesystem}",
+      "keyIcon": "󱑛",
+      "hideFolders": "/efi:/boot:/boot/*",
+      "percent": {
+        "green": 50,
+        "yellow": 80,
+        "type": 0
+      }
+    },
+    "break",
+    {
+      "type": "colors",
+      "key": " ",
+      "keyIcon": ""
+    }
+  ]
+}

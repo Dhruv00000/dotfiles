@@ -110,8 +110,8 @@ binds {
     XF86AudioStop allow-when-locked=true { spawn-sh "playerctl stop"; }
     XF86AudioPrev allow-when-locked=true { spawn-sh "playerctl previous"; }
     XF86AudioNext allow-when-locked=true { spawn-sh "playerctl next"; }
-    XF86MonBrightnessUp allow-when-locked=true cooldown-ms=500 { spawn "brightnessctl" "--class=backlight" "set" "+5%"; }
-    XF86MonBrightnessDown allow-when-locked=true cooldown-ms=500 { spawn "brightnessctl" "--class=backlight" "set" "5%-"; }
+    XF86MonBrightnessUp allow-when-locked=true cooldown-ms=500 { spawn "brightnessctl" "--class=backlight" "set" "+3%"; }
+    XF86MonBrightnessDown allow-when-locked=true cooldown-ms=500 { spawn "brightnessctl" "--class=backlight" "set" "3%-"; }
 
     Mod+1 { focus-workspace 1; }
     Mod+2 { focus-workspace 2; }

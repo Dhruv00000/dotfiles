@@ -95,7 +95,7 @@ _evalcache zoxide init zsh --cmd cd
 clear
 
 
-fastfetch
+fastfetch --logo Crux
 
 
 # ZSH history clear=ning script

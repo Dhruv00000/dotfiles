@@ -1,4 +1,4 @@
-abbr -g "gr"="| grep"
+abbr --global "gr"="| grep"
 
 abbr "p install"="yay --needed -S"
 abbr "p query"="yay -Q | grep"

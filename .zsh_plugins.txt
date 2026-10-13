@@ -7,3 +7,4 @@ olets/zsh-abbr
 zdharma-continuum/fast-syntax-highlighting
 alexdesousa/hab
 raimo/zsh-halfpipe
+itssimmons/zsh-lastpwd
