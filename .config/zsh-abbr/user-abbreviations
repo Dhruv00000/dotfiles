@@ -5,4 +5,7 @@ abbr "p query"="yay -Q | grep"
 abbr "p search"="yay -s"
 abbr "p uninstall"="yay -Rn"
 
-abbr "archive"="tar -czvf"
+abbr 'g a'="git add"
+abbr "g c m"="git commit -m"
+abbr "g p"="git push"
+abbr "g s"="git status"
