@@ -8,3 +8,4 @@ zdharma-continuum/fast-syntax-highlighting
 alexdesousa/hab
 raimo/zsh-halfpipe
 itssimmons/zsh-lastpwd
+momo-lab/zsh-replace-multiple-dots

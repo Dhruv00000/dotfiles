@@ -70,12 +70,17 @@ unarchive() {
     done
 }
 
+modded_mkdir() {
+    mkdir "$1" && cd "$1"
+}
+alias "mkdir"="modded_mkdir"
+
 diff_wrapper() {
     diff --recursive --unified $1 $2 | diff-so-fancy
 }
 alias diff='diff_wrapper'
 
-alias ls='exa --oneline --tree --classify=always --level 2 --follow-symlinks --absolute=off --colour=always --icons=always --hyperlink=always --all'
+alias ls='exa --oneline --tree --classify=always --level 2 --follow-symlinks --absolute=off --colour=always --icons=always --hyperlink=always --almost-all'
 
 alias cat='bat'
 

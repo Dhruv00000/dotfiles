@@ -10,7 +10,7 @@ if [ "$EXIT_CODE" -eq 130 ]; then
 fi
 
 case "$CMD" in
-    man|nano|uv|python|python3|btop) # A list of commands that ignore the timing functionality.
+    uv|python|python3) # A list of commands that ignore the timing functionality.
         exit 0
         ;;
 esac
