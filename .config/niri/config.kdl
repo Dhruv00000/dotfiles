@@ -67,10 +67,6 @@ switch-events {
     lid-close { spawn "sh" "-c" "niri msg action focus-workspace 9 && swaylock --color 000000 --show-failed-attempts --clock --indicator"; }
 }
 
-animations {
-    slowdown 1.33
-}
-
 
 gestures {
     hot-corners {

@@ -16,6 +16,8 @@ export ET_NOTIFY_COMMAND='~/scripts/notification_plugin_hook.sh'
 
 export COLORED_MAN_THEME=ansi # Matches plugin colours to the terminal's current colour scheme.
 
+ABBR_SET_EXPANSION_CURSOR=1
+
 # zstyle ':autocomplete:*' add-semicolon no
 # zstyle ':autocomplete:*' delay 0.5 # stops the autocomplete plugin from ruining performance
 

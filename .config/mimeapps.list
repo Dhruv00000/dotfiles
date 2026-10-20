@@ -48,8 +48,10 @@ x-scheme-handler/http=userapp-Zen-TDJ8M3.desktop;zen.desktop;
 x-scheme-handler/https=userapp-Zen-TDJ8M3.desktop;zen.desktop;
 
 application/json=vscodium-wayland.desktop;
+application/c=vscodium-wayland.desktop;
 application/toml=vscodium-wayland.desktop;vscodium.desktop;
 application/x-zerosize=vscodium-wayland.desktop;
+text/c=vscodium-wayland.desktop;
 text/css=vscodium-wayland.desktop;
 text/julia=vscodium-wayland.desktop;
 text/x-python=vscodium-wayland.desktop;
