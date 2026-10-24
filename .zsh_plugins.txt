@@ -4,7 +4,6 @@ Freed-Wu/zsh-help
 mroth/evalcache
 gwangyi/execution-time
 zdharma-continuum/fast-syntax-highlighting
-alexdesousa/hab
 raimo/zsh-halfpipe
 itssimmons/zsh-lastpwd
 momo-lab/zsh-replace-multiple-dots

@@ -4,7 +4,6 @@ christian-kohler.path-intellisense
 dlasagno.rasi
 frankie.vscode-gutter-preview-frankie
 kamikillerto.vscode-colorize
-mehayadav.vine-boom-errors
 ms-python.debugpy
 ms-python.python
 ms-python.vscode-python-envs

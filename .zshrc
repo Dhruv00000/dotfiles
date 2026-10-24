@@ -5,8 +5,13 @@ setopt INC_APPEND_HISTORY
 unsetopt EXTENDED_HISTORY
 
 
-autoload -U +X compinit && compinit
-autoload -U +X bashcompinit && bashcompinit # These  compinit lines are required for the 'hab' plugin to work.
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
+
+bindkey "^[[1;5D" backward-word
+bindkey "^[[1;5C" forward-word
+
+
 source /usr/share/zsh-antidote/antidote.zsh
 antidote load
 source ~/.zsh_plugins.zsh
@@ -63,6 +68,22 @@ EOF
 alias rm='modded_rm'
 alias rm_default='command rm'
 
+modded_mkdir() {
+    mkdir "$1" && cd "$1"
+}
+alias "mkdir"="modded_mkdir"
+
+modded_touch() {
+  for argument in "$@"; do
+    local dir=$(dirname "$argument")
+    if [ "$dir" != "." ]; then
+        mkdir --parents "$dir"
+    fi
+    command touch "$argument"
+  done
+}
+alias "touch"="modded_touch"
+
 unarchive() {
     for file in "$@"; do
         local dir="$file"
@@ -71,11 +92,6 @@ unarchive() {
         mkdir -p "$dir" && bsdtar -xf "$file" -C "$dir" && modded_rm "$file"
     done
 }
-
-modded_mkdir() {
-    mkdir "$1" && cd "$1"
-}
-alias "mkdir"="modded_mkdir"
 
 diff_wrapper() {
     diff --recursive --unified $1 $2 | diff-so-fancy
