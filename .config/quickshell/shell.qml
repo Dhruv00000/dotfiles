@@ -49,14 +49,14 @@ ShellRoot {
                         Files {
                             Layout.alignment: Qt.AlignVCenter
                         }
-                        CustomComponents.Spacer {}
-                        Airplane {
-                            Layout.alignment: Qt.AlignVCenter
-                        }
-                        CustomComponents.Spacer {}
-                        Vpn {
-                            Layout.alignment: Qt.AlignVCenter
-                        }
+                        // CustomComponents.Spacer {}
+                        // Airplane {
+                        //     Layout.alignment: Qt.AlignVCenter
+                        // }
+                        // CustomComponents.Spacer {}
+                        // Vpn {
+                        //     Layout.alignment: Qt.AlignVCenter
+                        // }
                         Item {
                             implicitWidth: 16
                         }

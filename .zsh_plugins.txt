@@ -8,3 +8,4 @@ raimo/zsh-halfpipe
 itssimmons/zsh-lastpwd
 momo-lab/zsh-replace-multiple-dots
 olets/zsh-abbr
+Bhupesh-V/ugit

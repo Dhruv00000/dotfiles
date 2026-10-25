@@ -1,8 +1,26 @@
 export HISTFILE=~/.zsh_history
 export HISTSIZE=10000
 export SAVEHIST=10000
+
 setopt INC_APPEND_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_SAVE_NO_DUPS
 unsetopt EXTENDED_HISTORY
+
+typeset -g _LAST_HISTORY_LINE=""
+zshaddhistory() {
+    _LAST_HISTORY_LINE="${1%%$'\n'}"
+    return 1
+}
+precmd() {
+    local -i exit_status=$?
+    if [[ -n "$_LAST_HISTORY_LINE" ]]; then # _LAST_HISTORY_LINE can be empty on shell startup and when Enter is pressed with an empty prompt.
+        if (( exit_status != 127 )); then
+            print -sr -- "$_LAST_HISTORY_LINE"
+        fi
+        _LAST_HISTORY_LINE="" # Need to reset _LAST_HISTORY_LINE because otherwise, executing a command, and then pressing enter on an empty prompt messes with the if condition above.
+    fi
+}
 
 
 bindkey "^[[H" beginning-of-line
@@ -10,6 +28,9 @@ bindkey "^[[F" end-of-line
 
 bindkey "^[[1;5D" backward-word
 bindkey "^[[1;5C" forward-word
+
+bindkey '^z' undo
+bindkey '^y' redo
 
 
 source /usr/share/zsh-antidote/antidote.zsh
@@ -121,17 +142,3 @@ clear
 
 
 fastfetch --logo Crux
-
-
-# ZSH history clear=ning script
-fc -W
-
-tac ~/.zsh_history | awk '{
-    cmd=$0
-    sub(/^: [0-9]+:[0-9]+;/, "", cmd)
-    if (!seen[cmd]++) {
-        print $0
-    }
-}' | tac > ~/.zsh_history.tmp
-
-mv ~/.zsh_history.tmp ~/.zsh_history
