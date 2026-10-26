@@ -1,3 +1,8 @@
+if [[ "$TERM_PROGRAM" == "vscode" && -z "$VSCODE_INJECTION" ]]; then
+    source "$(codium --locate-shell-integration-path zsh)"
+fi
+
+
 export HISTFILE=~/.zsh_history
 export HISTSIZE=10000
 export SAVEHIST=10000
@@ -14,7 +19,7 @@ zshaddhistory() {
 }
 precmd() {
     local -i exit_status=$?
-    if [[ -n "$_LAST_HISTORY_LINE" ]]; then # _LAST_HISTORY_LINE can be empty on shell startup and when Enter is pressed with an empty prompt.
+    if [[ -n "$_LAST_HISTORY_LINE" ]]; then # _LAST_HISTORY_LINE can be empty on shell startup or when Enter is pressed with an empty prompt.
         if (( exit_status != 127 )); then
             print -sr -- "$_LAST_HISTORY_LINE"
         fi
@@ -23,15 +28,8 @@ precmd() {
 }
 
 
-bindkey "^[[H" beginning-of-line
-bindkey "^[[F" end-of-line
-
-bindkey "^[[1;5D" backward-word
-bindkey "^[[1;5C" forward-word
-
-bindkey '^z' undo
-bindkey '^y' redo
-
+export warhol_ignore_ls=1
+export warhol_ignore_diff=1
 
 source /usr/share/zsh-antidote/antidote.zsh
 antidote load
@@ -42,7 +40,9 @@ export ET_NOTIFY_COMMAND='~/scripts/notification_plugin_hook.sh'
 
 export COLORED_MAN_THEME=ansi # Matches plugin colours to the terminal's current colour scheme.
 
-ABBR_SET_EXPANSION_CURSOR=1
+export ABBR_SET_EXPANSION_CURSOR=1
+
+unset LS_COLORS # Stops warhol from messing with exa's colourization
 
 # zstyle ':autocomplete:*' add-semicolon no
 # zstyle ':autocomplete:*' delay 0.5 # stops the autocomplete plugin from ruining performance
@@ -130,7 +130,12 @@ alias archive='tar -czvf'
 
 chpwd() {
     ls
+    pwd > ~/.cache/zsh/last_working_directory
 }
+
+if [[ -r ~/.cache/zsh/lastpwd ]]; then
+    command cd "$(cat ~/.cache/zsh/last_working_directory)" 2>/dev/null
+fi
 
 
 export PATH="$PATH:/home/dhruv/.local/bin"
@@ -139,6 +144,29 @@ export PATH="$PATH:/home/dhruv/.local/bin"
 _evalcache starship init zsh
 _evalcache zoxide init zsh --cmd cd
 clear
+
+
+replace_multiple_dots() {
+    local dots=$LBUFFER[-3,-1]
+    if [[ $dots =~ "^[ //\"']?\.\.$" ]]; then
+        LBUFFER=$LBUFFER[1,-3]'../.'
+    fi
+    zle self-insert
+}
+zle -N replace_multiple_dots
+bindkey '.' replace_multiple_dots
+
+
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
+
+bindkey "^[[1;5D" backward-word
+bindkey "^[[1;5C" forward-word
+
+bindkey '^H' backward-kill-word
+
+bindkey '^z' undo
+bindkey '^y' redo
 
 
 fastfetch --logo Crux
