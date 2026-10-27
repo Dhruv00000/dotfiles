@@ -1,3 +1,8 @@
+stty -ixon
+
+
+export EDITOR="/usr/bin/codium"
+
 if [[ "$TERM_PROGRAM" == "vscode" && -z "$VSCODE_INJECTION" ]]; then
     source "$(codium --locate-shell-integration-path zsh)"
 fi
@@ -20,7 +25,7 @@ zshaddhistory() {
 precmd() {
     local -i exit_status=$?
     if [[ -n "$_LAST_HISTORY_LINE" ]]; then # _LAST_HISTORY_LINE can be empty on shell startup or when Enter is pressed with an empty prompt.
-        if (( exit_status != 127 )); then
+        if (( exit_status != 127 && exit_status != 16 )); then
             print -sr -- "$_LAST_HISTORY_LINE"
         fi
         _LAST_HISTORY_LINE="" # Need to reset _LAST_HISTORY_LINE because otherwise, executing a command, and then pressing enter on an empty prompt messes with the if condition above.
@@ -119,19 +124,20 @@ diff_wrapper() {
 }
 alias diff='diff_wrapper'
 
-alias ls='exa --oneline --tree --classify=always --level 2 --follow-symlinks --absolute=off --colour=always --icons=always --hyperlink=always --almost-all'
-
 alias cat='bat'
 
 alias fzf='fzf --style full --preview "fzf-preview.sh {}" --bind "focus:transform-header:file --brief {}"'
 
 alias archive='tar -czvf'
 
+alias ls='~/scripts/ls_alias_decider.sh'
+
 
 chpwd() {
     ls
     pwd > ~/.cache/zsh/last_working_directory
 }
+
 
 if [[ -r ~/.cache/zsh/lastpwd ]]; then
     command cd "$(cat ~/.cache/zsh/last_working_directory)" 2>/dev/null
@@ -146,24 +152,35 @@ _evalcache zoxide init zsh --cmd cd
 clear
 
 
-replace_multiple_dots() {
+replace_dots () {
     local dots=$LBUFFER[-3,-1]
     if [[ $dots =~ "^[ //\"']?\.\.$" ]]; then
         LBUFFER=$LBUFFER[1,-3]'../.'
     fi
     zle self-insert
 }
-zle -N replace_multiple_dots
-bindkey '.' replace_multiple_dots
+zle -N replace_dots 
+bindkey '.' replace_dots
+
+toggle-sudo () {
+    if [[ $BUFFER == sudo\ * ]]; then
+        LBUFFER="${LBUFFER#sudo }"
+    else
+        LBUFFER="sudo $LBUFFER"
+    fi
+}
+zle -N toggle-sudo
+bindkey "^S" toggle-sudo # Ctr + S
 
 
-bindkey "^[[H" beginning-of-line
-bindkey "^[[F" end-of-line
+bindkey "^[[H" beginning-of-line # Home
+bindkey "^[[F" end-of-line # End
 
-bindkey "^[[1;5D" backward-word
-bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word # Ctrl + Left
+bindkey "^[[1;5C" forward-word # Ctrl + Right
 
-bindkey '^H' backward-kill-word
+bindkey '^H' backward-kill-word # Ctrl + Backspace
+bindkey '^[[1;2' backward-kill-line # Alt + Backspace
 
 bindkey '^z' undo
 bindkey '^y' redo

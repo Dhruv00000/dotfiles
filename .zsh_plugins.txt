@@ -7,3 +7,4 @@ gwangyi/execution-time
 zdharma-continuum/fast-syntax-highlighting
 olets/zsh-abbr
 Bhupesh-V/ugit
+mavwolverine/zsh-safe-venv-auto

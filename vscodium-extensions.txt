@@ -11,6 +11,7 @@ sapegin.todo-tomorrow
 tamasfe.even-better-toml
 texarkanine.termeleon
 theqtcompany.qt-core
+theqtcompany.qt-qml
 usernamehw.errorlens
 v1hz.kdl-v1
 yukina.nordavind
