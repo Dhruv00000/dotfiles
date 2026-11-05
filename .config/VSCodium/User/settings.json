@@ -39,5 +39,6 @@
             "path": "/usr/bin/qmake"
         }
     ],
-    "qt-core.showWelcomePageOnActivation": false
+    "qt-core.showWelcomePageOnActivation": false,
+    "python.createEnvironment.trigger": "off"
 }

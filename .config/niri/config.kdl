@@ -65,7 +65,7 @@ hotkey-overlay {
 
 
 switch-events {
-    lid-close { spawn "sh" "-c" "niri msg action focus-workspace 9 && swaylock --color 000000 --show-failed-attempts --clock --indicator"; }
+    lid-close { spawn "sh" "-c" "niri msg action focus-workspace 9 && swaylock --color 000000 --show-failed-attempts --clock --indicator && ~/scripts/wifi_autologin.sh"; }
 }
 
 
@@ -138,7 +138,7 @@ binds {
 
     Mod+Shift+E { spawn "wlogout"; }
 
-    Mod+Escape repeat=false { spawn-sh "niri msg action focus-workspace 9 && swaylock --color 000000 --show-failed-attempts --clock --indicator"; }
+    Mod+Escape repeat=false { spawn-sh "niri msg action focus-workspace 9 && swaylock --color 000000 --show-failed-attempts --clock --indicator && ~/scripts/wifi_autologin.sh"; }
 
     Mod+Backspace repeat=false { spawn-sh "swaync-client --close-latest"; }
 
