@@ -1,11 +1,17 @@
 stty -ixon
 
 
+export VIRTUAL_ENV_DISABLE_PROMPT=1 # Stops python venv activation scripts from overriding the custom starship prompt.
+
+
 export EDITOR="/usr/bin/codium"
 
 if [[ "$TERM_PROGRAM" == "vscode" && -z "$VSCODE_INJECTION" ]]; then
     source "$(codium --locate-shell-integration-path zsh)"
 fi
+
+
+unsetopt autocd
 
 
 export HISTFILE=~/.zsh_history
@@ -139,8 +145,8 @@ chpwd() {
 }
 
 
-if [[ -r ~/.cache/zsh/lastpwd ]]; then
-    command cd "$(cat ~/.cache/zsh/last_working_directory)" 2>/dev/null
+if [[ -r ~/.cache/zsh/last_working_directory ]]; then
+    builtin cd "$(cat ~/.cache/zsh/last_working_directory)" 2>/dev/null
 fi
 
 
@@ -184,6 +190,9 @@ bindkey '^[[1;2' backward-kill-line # Alt + Backspace
 
 bindkey '^z' undo
 bindkey '^y' redo
+
+
+setopt correct
 
 
 fastfetch --logo Crux
