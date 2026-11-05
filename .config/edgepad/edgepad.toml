@@ -1,0 +1,6 @@
+device = "auto"
+
+[[sliders]]
+zone = "bottom"
+left = ["wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "0.05-"]
+right = ["wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "0.05+", "--limit", "1.0"]
