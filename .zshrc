@@ -11,6 +11,15 @@ if [[ "$TERM_PROGRAM" == "vscode" && -z "$VSCODE_INJECTION" ]]; then
 fi
 
 
+export PATH="$PATH:/home/dhruv/.local/bin"
+
+
+source <(fzf --zsh)
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+export PATH="$PATH:/usr/share/fzf/"
+
+
 unsetopt autocd
 
 
@@ -39,12 +48,15 @@ precmd() {
 }
 
 
-export warhol_ignore_ls=1
-export warhol_ignore_diff=1
+zstyle ':plugin:ez-compinit' 'compstyle' 'zshzoo'
 
 source /usr/share/zsh-antidote/antidote.zsh
 antidote load
 source ~/.zsh_plugins.zsh
+
+
+export warhol_ignore_ls=1
+export warhol_ignore_diff=1
 
 export ET_NOTIFY_TIMEOUT=15000
 export ET_NOTIFY_COMMAND='~/scripts/notification_plugin_hook.sh'
@@ -55,14 +67,20 @@ export ABBR_SET_EXPANSION_CURSOR=1
 
 unset LS_COLORS # Stops warhol from messing with exa's colourization
 
-# zstyle ':autocomplete:*' add-semicolon no
-# zstyle ':autocomplete:*' delay 0.5 # stops the autocomplete plugin from ruining performance
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
 
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
-source <(fzf --zsh)
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
-export PATH="$PATH:/usr/share/fzf/"
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa --oneline --tree --classify=always --level 2 --follow-symlinks --absolute=off --colour=always --icons=always --hyperlink=always --almost-all $realpath'
+
+export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=30
+export ZSH_AUTOSUGGEST_MANUAL_REBIND=1
+export ZSH_AUTOSUGGEST_HISTORY_IGNORE="?(#c50,)"
+
+bindkey '^[[A' history-substring-search-up 
+bindkey '^[[B' history-substring-search-down
 
 
 source /usr/share/doc/pkgfile/command-not-found.zsh
@@ -148,9 +166,6 @@ chpwd() {
 if [[ -r ~/.cache/zsh/last_working_directory ]]; then
     builtin cd "$(cat ~/.cache/zsh/last_working_directory)" 2>/dev/null
 fi
-
-
-export PATH="$PATH:/home/dhruv/.local/bin"
 
 
 _evalcache starship init zsh

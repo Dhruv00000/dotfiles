@@ -1,3 +1,4 @@
+mattmc3/ez-compinit
 unixorn/warhol.plugin.zsh
 hlissner/zsh-autopair
 diverdale/colored-man-pages-plus
@@ -8,3 +9,7 @@ zdharma-continuum/fast-syntax-highlighting
 olets/zsh-abbr
 Bhupesh-V/ugit
 mavwolverine/zsh-safe-venv-auto
+zsh-users/zsh-history-substring-search
+clarketm/zsh-completions
+zsh-users/zsh-autosuggestions
+Aloxaf/fzf-tab
