@@ -1,3 +1,4 @@
+albarham.cp-swiss-knife
 catppuccin.catppuccin-vsc-icons
 charliermarsh.ruff
 christian-kohler.path-intellisense

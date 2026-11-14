@@ -1,9 +1,9 @@
 abbr --global "gr"="| grep"
 
-abbr "p install"="yay --needed -S"
+abbr "p inst"="yay --needed -S"
 abbr "p query"="yay -Q | grep"
 abbr "p search"="yay -s"
-abbr "p uninstall"="yay -Rn"
+abbr "p uninst"="yay -Rn"
 
 abbr "g a"="git add"
 abbr "g c m"="git commit -m \"%\""

@@ -40,5 +40,6 @@
         }
     ],
     "qt-core.showWelcomePageOnActivation": false,
-    "python.createEnvironment.trigger": "off"
+    "python.createEnvironment.trigger": "off",
+    "git.enableStatusBarSync": false
 }

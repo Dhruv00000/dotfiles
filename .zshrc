@@ -1,10 +1,11 @@
 stty -ixon
 
 
-export VIRTUAL_ENV_DISABLE_PROMPT=1 # Stops python venv activation scripts from overriding the custom starship prompt.
+export VIRTUAL_ENV_DISABLE_PROMPT=1 # Stops the python venv activation script from overriding the custom starship prompt.
 
 
 export EDITOR="/usr/bin/codium"
+
 
 if [[ "$TERM_PROGRAM" == "vscode" && -z "$VSCODE_INJECTION" ]]; then
     source "$(codium --locate-shell-integration-path zsh)"
@@ -20,7 +21,24 @@ source /usr/share/fzf/completion.zsh
 export PATH="$PATH:/usr/share/fzf/"
 
 
-unsetopt autocd
+unsetopt AUTO_CD
+
+setopt COMPLETE_IN_WORD
+setopt LIST_TYPES
+unsetopt REC_EXACT
+setopt HASH_LIST_ALL
+setopt HASH_CMDS
+
+setopt CORRECT
+setopt CORRECT_ALL
+
+unsetopt MAIL_WARNING
+
+unsetopt PRINT_EXIT_VALUE
+
+unsetopt RM_STAR_SILENT
+
+setopt PROMPT_SP
 
 
 export HISTFILE=~/.zsh_history
@@ -37,6 +55,7 @@ zshaddhistory() {
     _LAST_HISTORY_LINE="${1%%$'\n'}"
     return 1
 }
+
 precmd() {
     local -i exit_status=$?
     if [[ -n "$_LAST_HISTORY_LINE" ]]; then # _LAST_HISTORY_LINE can be empty on shell startup or when Enter is pressed with an empty prompt.
@@ -48,12 +67,9 @@ precmd() {
 }
 
 
-zstyle ':plugin:ez-compinit' 'compstyle' 'zshzoo'
-
 source /usr/share/zsh-antidote/antidote.zsh
 antidote load
 source ~/.zsh_plugins.zsh
-
 
 export warhol_ignore_ls=1
 export warhol_ignore_diff=1
@@ -70,6 +86,9 @@ unset LS_COLORS # Stops warhol from messing with exa's colourization
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
 
+zstyle ':completion:*:(all-|)files' ignored-patterns '(|*/).git'
+zstyle ':completion:*:cd:*' ignored-patterns '(|*/).git'
+
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa --oneline --tree --classify=always --level 2 --follow-symlinks --absolute=off --colour=always --icons=always --hyperlink=always --almost-all $realpath'
@@ -78,6 +97,8 @@ export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=30
 export ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 export ZSH_AUTOSUGGEST_HISTORY_IGNORE="?(#c50,)"
+
+zstyle ':completion:*:*:*:*:descriptions' format '-- %d --'
 
 bindkey '^[[A' history-substring-search-up 
 bindkey '^[[B' history-substring-search-down
@@ -154,7 +175,7 @@ alias fzf='fzf --style full --preview "fzf-preview.sh {}" --bind "focus:transfor
 
 alias archive='tar -czvf'
 
-alias ls='~/scripts/ls_alias_decider.sh'
+alias ls='~/scripts/ls_alias_decider.sh' # Script for automatically picking one of 2 exa commands to replace ls
 
 
 chpwd() {
@@ -205,9 +226,6 @@ bindkey '^[[1;2' backward-kill-line # Alt + Backspace
 
 bindkey '^z' undo
 bindkey '^y' redo
-
-
-setopt correct
 
 
 fastfetch --logo Crux
