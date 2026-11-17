@@ -27,7 +27,7 @@ while [ -n "$CURRENT_PID" ] && [ "$CURRENT_PID" -gt 1 ]; do
     if [ -z "$PARENT_PID" ] || [ "$PARENT_PID" -eq "$CURRENT_PID" ]; then # Handling weird process chains.
         break
     fi
-    CURR_PID="$PARENT_PID"
+    CURRENT_PID="$PARENT_PID"
 done
 
 

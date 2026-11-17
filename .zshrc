@@ -75,7 +75,7 @@ export warhol_ignore_ls=1
 export warhol_ignore_diff=1
 
 export ET_NOTIFY_TIMEOUT=15000
-export ET_NOTIFY_COMMAND='~/scripts/notification_plugin_hook.sh'
+export ET_NOTIFY_COMMAND="$HOME/scripts/notification_plugin_hook.sh"
 
 export COLORED_MAN_THEME=ansi # Matches plugin colours to the terminal's current colour scheme.
 
