@@ -143,3 +143,12 @@ binds {
     Mod+Backspace repeat=false { spawn-sh "swaync-client --close-latest"; }
 
 }
+
+
+// debug {
+//     honor-xdg-activation-with-invalid-serial
+// }
+
+// window-rule {
+//     on-xdg-activate "focus"
+// }

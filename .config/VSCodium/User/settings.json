@@ -41,5 +41,9 @@
     ],
     "qt-core.showWelcomePageOnActivation": false,
     "python.createEnvironment.trigger": "off",
-    "git.enableStatusBarSync": false
+    "git.enableStatusBarSync": false,
+    "workbench.layoutControl.enabled": false,
+    "workbench.browser.showInTitleBar": false,
+    "workbench.panel.showLabels": false,
+    "terminal.integrated.initialHint": false
 }

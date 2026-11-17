@@ -1,0 +1,23 @@
+[
+    {
+        "key": "ctrl+;",
+        "command": "workbench.action.browser.goBack",
+        "when": "browserCanGoBack && activeEditor == 'workbench.editor.browser'"
+    },
+    {
+        "key": "alt+left",
+        "command": "-workbench.action.browser.goBack",
+        "when": "browserCanGoBack && activeEditor == 'workbench.editor.browser'"
+    },
+    {
+        "key": "ctrl+'",
+        "command": "workbench.action.browser.goForward",
+        "when": "browserCanGoForward && activeEditor == 'workbench.editor.browser'"
+    },
+    {
+        "key": "alt+right",
+        "command": "-workbench.action.browser.goForward",
+        "when": "browserCanGoForward && activeEditor == 'workbench.editor.browser'"
+    }
+    
+]

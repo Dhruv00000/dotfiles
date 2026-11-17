@@ -176,22 +176,15 @@ alias fzf='fzf --style full --preview "fzf-preview.sh {}" --bind "focus:transfor
 alias archive='tar -czvf'
 
 alias ls='~/scripts/ls_alias_decider.sh' # Script for automatically picking one of 2 exa commands to replace ls
-
-
 chpwd() {
     ls
-    pwd > ~/.cache/zsh/last_working_directory
 }
 
-
-if [[ -r ~/.cache/zsh/last_working_directory ]]; then
-    builtin cd "$(cat ~/.cache/zsh/last_working_directory)" 2>/dev/null
-fi
+alias song_download='yt-dlp -x --audio-quality 0 -t mp3'
 
 
 _evalcache starship init zsh
 _evalcache zoxide init zsh --cmd cd
-clear
 
 
 replace_dots () {
