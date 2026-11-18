@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 set -o pipefail
 
 (find "$HOME/.local/share/Trash/info/" -mindepth 1 -name "*.trashinfo" -type f -mtime +15 -print0 | while IFS= read -r -d '' infofile; do

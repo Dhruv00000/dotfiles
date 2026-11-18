@@ -1,19 +1,19 @@
 #!/usr/bin/env bash
 
+echo -e "STARTUP LOG ($(date))\n\n" > "$HOME/system_log.txt" # Clear the previous startup's log entries.
+
 run_app() {
     local LABEL="$1"
     shift
     (
         if ! "$@" >> "$HOME/system_log.txt" 2>&1; then
-            ACTION=$(notify-send "Niri startup log" "Failed to $LABEL." --wait --icon dialog-error --action="logfile=󱪗 Open log" --expire-time=5000)
+            ACTION=$(notify-send "Niri startup log" "Failed to $LABEL." --wait --icon dialog-error --action="logfile=󱪗  Open log" --expire-time=5000)
             if [[ "$ACTION" == "logfile" ]]; then
                 xdg-open "$HOME/system_log.txt"
             fi
         fi
     ) &
 }
-
-echo -e "STARTUP LOG ($(date))\n\n" > "$HOME/system_log.txt" # Clear the previous startup's log entries.
 
 run_app "set colour scheme" "$HOME/scripts/colour_scheme_picker.sh"
 run_app "clean trash" "$HOME/scripts/file_cleaner.sh"

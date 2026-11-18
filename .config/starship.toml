@@ -2,13 +2,6 @@
 
 add_newline = true
 
-[palettes.iris]
-primary = "#c3d78d"
-surface = "{background}"
-error = "#d7bf8d"
-
-palette = "iris"
-
 [package]
 disabled = true
 

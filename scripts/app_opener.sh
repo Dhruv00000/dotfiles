@@ -1,6 +1,6 @@
 #!/bin/bash
 
-WINDOW_ID=$(niri msg --json windows | jq --raw-output ".[] | select(.app_id == \"$1\") | .id" | head -n 1)
+WINDOW_ID=$(niri msg --json windows | jq --raw-output ".[] | select(.app_id == \"$1\") | .id" | head --lines 1)
 CMD="${2:-$1}"
 
 if [ -n "$WINDOW_ID" ]; then

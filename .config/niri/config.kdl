@@ -52,7 +52,7 @@ output "eDP-1" {
 }
 
 
-spawn-sh-at-startup "~/scripts/autostart.sh" // Autostart commands had to be put into another script in order to use a mix of sequential and parallel execution (to avoid a race condition with the logging system), which niri's config doesn't allow.
+spawn-sh-at-startup "~/scripts/startup_script.sh" // Autostart commands had to be put into another script in order to use a mix of sequential and parallel execution (to avoid a race condition with the logging system), which niri's config doesn't allow.
 spawn-at-startup "~/scripts/wifi_autologin.sh"
 
 spawn-sh-at-startup "alsactl restore -f ~/.asound.state" // fixes mic issues
