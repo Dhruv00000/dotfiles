@@ -12,7 +12,7 @@ run_app() {
                 xdg-open "$HOME/system_log.txt"
             fi
         fi
-    ) &
+    ) &disown
 }
 
 run_app "clean trash" "$HOME/scripts/file_cleaner.sh"

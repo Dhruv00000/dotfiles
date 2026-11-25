@@ -15,12 +15,14 @@ fi
 export PATH="$PATH:/home/dhruv/.local/bin"
 
 
+# FZF
 source <(fzf --zsh)
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 export PATH="$PATH:/usr/share/fzf/"
 
 
+# Zsh options
 unsetopt AUTO_CD
 
 setopt COMPLETE_IN_WORD
@@ -41,6 +43,7 @@ unsetopt RM_STAR_SILENT
 setopt PROMPT_SP
 
 
+# Command history
 export HISTFILE=~/.zsh_history
 export HISTSIZE=10000
 export SAVEHIST=10000
@@ -67,6 +70,7 @@ precmd() {
 }
 
 
+# Plugins
 source /usr/share/zsh-antidote/antidote.zsh
 antidote load
 source ~/.zsh_plugins.zsh
@@ -107,6 +111,7 @@ bindkey '^[[B' history-substring-search-down
 source /usr/share/doc/pkgfile/command-not-found.zsh
 
 
+# Aliases and wrappers
 modded_rm() {
     for file in "$@"; do
 
@@ -187,6 +192,7 @@ _evalcache starship init zsh
 _evalcache zoxide init zsh --cmd cd
 
 
+# Widgets
 replace_dots () {
     local dots=$LBUFFER[-3,-1]
     if [[ $dots =~ "^[ //\"']?\.\.$" ]]; then
@@ -208,6 +214,7 @@ zle -N toggle-sudo
 bindkey "^S" toggle-sudo # Ctr + S
 
 
+# Keybinds
 bindkey "^[[H" beginning-of-line # Home
 bindkey "^[[F" end-of-line # End
 

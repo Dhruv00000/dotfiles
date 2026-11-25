@@ -22,7 +22,7 @@ Rectangle {
         onEntered: logoutButton.color = Colours.surfaceHover
         onExited: logoutButton.color = "transparent"
 
-        onClicked: { Quickshell.execDetached(["wlogout"]); }
+        onClicked: { Quickshell.execDetached(["wlogout", "--show-binds"]); }
     }
 
 }

@@ -1,10 +1,12 @@
 abbr --global "gr"="| grep"
 
+# Yay
 abbr "p inst"="yay --needed -S"
 abbr "p query"="yay -Q | grep"
 abbr "p search"="yay -s"
 abbr "p uninst"="yay -Rn"
 
+# Git
 abbr "g a"="git add"
 abbr "g c m"="git commit -m \"%\""
 abbr "g p"="git push"

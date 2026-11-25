@@ -2,11 +2,11 @@
 <actions>
 <action>
 	<icon>utilities-terminal</icon>
-	<name>Open Terminal Here</name>
+	<name>Open terminal here</name>
 	<submenu></submenu>
 	<unique-id>1782223481041613-1</unique-id>
 	<command>/usr/bin/kitty %f</command>
-	<description>Open kitty with this directory as the current working directory</description>
+	<description>Open kitty with this directory as the working directory</description>
 	<range></range>
 	<patterns>*</patterns>
 	<startup-notify/>

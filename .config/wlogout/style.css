@@ -1,22 +1,27 @@
 @import url("colours.css");
 
+
 * {
     background-image: none;
     box-shadow: none;
 }
 
+
 window {
     background-color: @overlay;
 }
 
+
 button {
     color: @foreground;
     background-color: @surface;
-    border: 2px solid @border;
-    border-radius: 12px;
+    border: 5px solid @border;
+    border-radius: 0px;
+    margin: 15px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 25%;
+    font-size: 20px;
 }
 
 button:active,
@@ -27,8 +32,10 @@ button:hover {
 }
 
 button:focus {
-    border-color: @accent; outline-style: none;
+    border-color: @accent;
+    outline-style: none;
 }
+
 
 #lock {
     background-image: image(url("/usr/share/wlogout/icons/lock.png"));

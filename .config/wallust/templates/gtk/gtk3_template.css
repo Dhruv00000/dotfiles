@@ -26,6 +26,7 @@
 
 * {
     border-radius: 0px !important;
+    font-family: "JetBrainsMono Nerd Font", "JetBrains Mono", monospace;
 }
 
 
@@ -43,6 +44,7 @@ textview text,
     color: {{foreground}};
 }
 
+
 treeview.view:selected,
 treeview.view:selected:focus,
 iconview:selected,
@@ -58,6 +60,13 @@ row:selected {
     border-radius: 0px !important;
 }
 
+button:checked,
+button:active {
+    background-color: {{color4}};
+    color: {{background}};
+    border-color: {{color4}};
+}
+
 
 headerbar,
 menubar,
@@ -71,6 +80,7 @@ actionbar {
     box-shadow: none;
 }
 
+
 placessidebar,
 placessidebar list,
 .sidebar {
@@ -79,10 +89,24 @@ placessidebar list,
     border-right: 1px solid {{color8}};
 }
 
+
 placessidebar row:hover,
 list row:hover {
     background-color: {{color8}};
     color: {{background}};
+}
+
+menuitem:hover,
+modelbutton:hover {
+    background-color: {{color8}};
+    color: {{background}};
+}
+
+button:hover,
+combobox box.linked > button:hover {
+    background-color: {{color8}};
+    color: {{background}};
+    border-color: {{color4}};
 }
 
 
@@ -96,19 +120,6 @@ combobox box.linked > button {
     box-shadow: none;
 }
 
-button:hover,
-combobox box.linked > button:hover {
-    background-color: {{color8}};
-    color: {{background}};
-    border-color: {{color4}};
-}
-
-button:checked,
-button:active {
-    background-color: {{color4}};
-    color: {{background}};
-    border-color: {{color4}};
-}
 
 entry:focus {
     border-color: {{color4}};
@@ -122,10 +133,4 @@ popover,
     background-color: {{color0}};
     color: {{foreground}};
     border: 1px solid {{color8}};
-}
-
-menuitem:hover,
-modelbutton:hover {
-    background-color: {{color8}};
-    color: {{background}};
 }

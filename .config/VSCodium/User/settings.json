@@ -1,7 +1,7 @@
 {
     "window.titleBarStyle": "native",
     "explorer.confirmDelete": false,
-    "editor.fontFamily": "FiraCode Nerd Font Mono",
+    "editor.fontFamily": "JetBrains Mono",
     "editor.fontSize": 18,
     "workbench.sideBar.location": "right",
     "editor.mouseWheelZoom": true,

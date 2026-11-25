@@ -2,6 +2,7 @@ backend = "wal"
 color_space = "lab"
 palette = "dark"
 
+
 [templates]
 kitty = { template = "kitty_template.conf", target = "~/.config/kitty/colours.conf" }
 rofi = { template = "rofi_template.rasi", target = "~/.config/rofi/colours.rasi" }

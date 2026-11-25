@@ -3,6 +3,11 @@ include "colours.kdl"
 
 prefer-no-csd
 
+window-rule {
+    geometry-corner-radius 0
+    clip-to-geometry true
+}
+
 
 input {
     touchpad {
@@ -22,7 +27,6 @@ layout {
 
     default-column-width { proportion 1.0; }
     center-focused-column "on-overflow"
-
     gaps 0
 
     focus-ring {
@@ -41,11 +45,9 @@ layout {
 
 
 output "eDP-1" {
-
     mode "1920x1080@144"
     variable-refresh-rate
     focus-at-startup
-
 }
 
 
@@ -80,6 +82,29 @@ binds {
     Mod+Down { focus-workspace-down; }
     Mod+Up { focus-workspace-up; }
 
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+6 { focus-workspace 6; }
+    Mod+7 { focus-workspace 7; }
+    Mod+8 { focus-workspace 8; }
+    Mod+9 { focus-workspace 9; }
+
+    Mod+Shift+1 { move-column-to-workspace 1; }
+    Mod+Shift+2 { move-column-to-workspace 2; }
+    Mod+Shift+3 { move-column-to-workspace 3; }
+    Mod+Shift+4 { move-column-to-workspace 4; }
+    Mod+Shift+5 { move-column-to-workspace 5; }
+    Mod+Shift+6 { move-column-to-workspace 6; }
+    Mod+Shift+7 { move-column-to-workspace 7; }
+    Mod+Shift+8 { move-column-to-workspace 8; }
+    Mod+Shift+9 { move-column-to-workspace 9; }
+
+    Mod+Shift+Right { move-column-right; }
+    Mod+Shift+Left { move-column-left; }
+
     Mod+K repeat=false { close-window; }
 
     Alt+Space { spawn-sh "rofi -show drun -theme $HOME/.config/rofi/launcher.rasi || pkill rofi"; }
@@ -105,44 +130,22 @@ binds {
     XF86MonBrightnessUp allow-when-locked=true cooldown-ms=500 { spawn "brightnessctl" "--class=backlight" "set" "+3%"; }
     XF86MonBrightnessDown allow-when-locked=true cooldown-ms=500 { spawn "brightnessctl" "--class=backlight" "set" "3%-"; }
 
-    Mod+1 { focus-workspace 1; }
-    Mod+2 { focus-workspace 2; }
-    Mod+3 { focus-workspace 3; }
-    Mod+4 { focus-workspace 4; }
-    Mod+5 { focus-workspace 5; }
-    Mod+6 { focus-workspace 6; }
-    Mod+7 { focus-workspace 7; }
-    Mod+8 { focus-workspace 8; }
-    Mod+9 { focus-workspace 9; }
-    Mod+Shift+1 { move-column-to-workspace 1; }
-    Mod+Shift+2 { move-column-to-workspace 2; }
-    Mod+Shift+3 { move-column-to-workspace 3; }
-    Mod+Shift+4 { move-column-to-workspace 4; }
-    Mod+Shift+5 { move-column-to-workspace 5; }
-    Mod+Shift+6 { move-column-to-workspace 6; }
-    Mod+Shift+7 { move-column-to-workspace 7; }
-    Mod+Shift+8 { move-column-to-workspace 8; }
-    Mod+Shift+9 { move-column-to-workspace 9; }
-
-    Mod+Shift+Right { move-column-right; }
-    Mod+Shift+Left { move-column-left; }
-
     Mod+L repeat=false { spawn "~/scripts/wifi_autologin.sh"; }
     Mod+Shift+S repeat=false { spawn "~/scripts/screenshot_capturer.sh"; }
 
     Mod+Ctrl+Shift+Alt+Delete allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
-    Mod+Shift+E { spawn "wlogout"; }
+    Mod+Shift+E { spawn-sh "pgrep wlogout || wlogout --show-binds"; }
     Mod+Escape repeat=false { spawn "bash" "-c" "~/scripts/screen_locker.sh & niri msg action focus-workspace 9"; }
     Mod+Backspace repeat=false { spawn-sh "swaync-client --close-latest"; }
 
 }
 
 
-// Dealing with stubborn CSDs.
+// File rename dialogues in thunar
 window-rule {
-    geometry-corner-radius 0
-    clip-to-geometry true
+    match title="^Rename \".*\"$"
+    open-floating true
 }
 
 
@@ -158,4 +161,9 @@ window-rule {
 environment {
     QT_QPA_PLATFORMTHEME "qt6ct"
     QT_QPA_PLATFORM "wayland;xcb"
+
+    // Fixing btop
+    LANG "en_IN.UTF-8"
+    LC_ALL "en_IN.UTF-8"
+    LC_CTYPE "en_IN.UTF-8"
 }
