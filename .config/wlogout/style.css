@@ -1,0 +1,55 @@
+@import url("colours.css");
+
+* {
+    background-image: none;
+    box-shadow: none;
+}
+
+window {
+    background-color: @overlay;
+}
+
+button {
+    color: @foreground;
+    background-color: @surface;
+    border: 2px solid @border;
+    border-radius: 12px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
+}
+
+button:active,
+button:hover {
+    background-color: @surface_hover;
+    border-color: @accent;
+    outline-style: none;
+}
+
+button:focus {
+    border-color: @accent; outline-style: none;
+}
+
+#lock {
+    background-image: image(url("/usr/share/wlogout/icons/lock.png"));
+}
+
+#logout {
+    background-image: image(url("/usr/share/wlogout/icons/logout.png"));
+}
+
+#suspend {
+    background-image: image(url("/usr/share/wlogout/icons/suspend.png"));
+}
+
+#hibernate {
+    background-image: image(url("/usr/share/wlogout/icons/hibernate.png"));
+}
+
+#shutdown {
+    background-image: image(url("/usr/share/wlogout/icons/shutdown.png"));
+}
+
+#reboot {
+    background-image: image(url("/usr/share/wlogout/icons/reboot.png"));
+}

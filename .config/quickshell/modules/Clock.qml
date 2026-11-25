@@ -10,7 +10,7 @@ Text {
     }
     text: Qt.formatDateTime(clock.date, "ddd, dd MMM\nhh:mm")
     horizontalAlignment: Text.AlignHCenter
-    color: "white"
+    color: Colours.text
     font.family: "JetBrainsMono Propo"
     font.weight: 500
     font.pixelSize: 15

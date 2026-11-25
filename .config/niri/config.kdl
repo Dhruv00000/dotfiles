@@ -1,3 +1,6 @@
+include "colours.kdl"
+
+
 prefer-no-csd
 
 
@@ -11,17 +14,7 @@ input {
 
 cursor {
     xcursor-theme "Bibata-Modern-Ice"
-    xcursor-size 35
-}
-
-
-environment {
-    QT_QPA_PLATFORMTHEME "qt6ct"
-    QT_QPA_PLATFORM "wayland;xcb"
-
-    LANG "en_IN.UTF-8"
-    LC_ALL "en_IN.UTF-8"
-    LC_CTYPE "en_IN.UTF-8"
+    xcursor-size 32
 }
 
 
@@ -34,6 +27,10 @@ layout {
 
     focus-ring {
         off
+    }
+    border {
+        on
+        width 2
     }
 
     shadow {
@@ -55,7 +52,7 @@ output "eDP-1" {
 spawn-sh-at-startup "~/scripts/startup_script.sh" // Autostart commands had to be put into another script in order to use a mix of sequential and parallel execution (to avoid a race condition with the logging system), which niri's config doesn't allow.
 spawn-at-startup "~/scripts/wifi_autologin.sh"
 
-spawn-sh-at-startup "alsactl restore -f ~/.asound.state" // fixes mic issues
+spawn-sh-at-startup "alsactl restore -f ~/.asound.state" // fixes mic issues, and disables the mic on startup.
 spawn-sh-at-startup "codium --list-extensions > ~/Projects/dotfiles/vscodium-extensions.txt" // Integrating my vscode extension list into my dotfiles.
 
 
@@ -65,7 +62,7 @@ hotkey-overlay {
 
 
 switch-events {
-    lid-close { spawn "sh" "-c" "niri msg action focus-workspace 9 && swaylock --color 000000 --show-failed-attempts --clock --indicator && ~/scripts/wifi_autologin.sh"; }
+    lid-close { spawn "bash" "-c" "~/scripts/screen_locker.sh & niri msg action focus-workspace 9"; }
 }
 
 
@@ -85,7 +82,7 @@ binds {
 
     Mod+K repeat=false { close-window; }
 
-    Alt+Space { spawn-sh "rofi -show drun -theme $HOME/.config/rofi/launcher.rasi || pkill rofi"; } // The first command throws an error if rofi is already running, so this keybind basically functions as a toggle for rofi.
+    Alt+Space { spawn-sh "rofi -show drun -theme $HOME/.config/rofi/launcher.rasi || pkill rofi"; }
 
     // If a keybind is pressed without shift, navigate to an already-running instance of the corresponding program. Otherwise, open a new instance. If shift is also pressed, then create a new instance of that program regardless of whether it is already running or not.
     Mod+C repeat=false { spawn-sh "~/scripts/app_opener.sh codium codium"; }
@@ -96,8 +93,6 @@ binds {
     Mod+Shift+F repeat=false { spawn "thunar"; }
     Mod+T repeat=false { spawn-sh "~/scripts/app_opener.sh kitty kitty"; }
     Mod+Shift+T repeat=false { spawn "kitty"; }
-
-    Mod+L repeat=false { spawn "~/scripts/wifi_autologin.sh"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+ -l 1.0"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-"; }
@@ -132,16 +127,22 @@ binds {
     Mod+Shift+Right { move-column-right; }
     Mod+Shift+Left { move-column-left; }
 
+    Mod+L repeat=false { spawn "~/scripts/wifi_autologin.sh"; }
     Mod+Shift+S repeat=false { spawn "~/scripts/screenshot_capturer.sh"; }
 
-    Mod+Ctrl+Alt+Delete allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+    Mod+Ctrl+Shift+Alt+Delete allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
     Mod+Shift+E { spawn "wlogout"; }
-
-    Mod+Escape repeat=false { spawn-sh "niri msg action focus-workspace 9 && swaylock --color 000000 --show-failed-attempts --clock --indicator && ~/scripts/wifi_autologin.sh"; }
-
+    Mod+Escape repeat=false { spawn "bash" "-c" "~/scripts/screen_locker.sh & niri msg action focus-workspace 9"; }
     Mod+Backspace repeat=false { spawn-sh "swaync-client --close-latest"; }
 
+}
+
+
+// Dealing with stubborn CSDs.
+window-rule {
+    geometry-corner-radius 0
+    clip-to-geometry true
 }
 
 
@@ -152,3 +153,9 @@ binds {
 // window-rule {
 //     on-xdg-activate "focus"
 // }
+
+
+environment {
+    QT_QPA_PLATFORMTHEME "qt6ct"
+    QT_QPA_PLATFORM "wayland;xcb"
+}

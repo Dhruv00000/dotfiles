@@ -11,7 +11,7 @@ Rectangle {
 
     CustomComponents.NerdIcon {
         text: "󰖂"
-        color: "#ef4444"
+        color: Colours.danger
     }
 
     MouseArea {
@@ -19,7 +19,7 @@ Rectangle {
         hoverEnabled: true
         cursorShape: Qt.PointingHandCursor
 
-        onEntered: logoutButton.color = Colors.dim_color
+        onEntered: logoutButton.color = Colours.surfaceHover
         onExited: logoutButton.color = "transparent"
 
         onClicked: { Quickshell.execDetached(["wlogout"]); }

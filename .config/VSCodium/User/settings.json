@@ -1,4 +1,5 @@
 {
+    "window.titleBarStyle": "native",
     "explorer.confirmDelete": false,
     "editor.fontFamily": "FiraCode Nerd Font Mono",
     "editor.fontSize": 18,
@@ -6,8 +7,6 @@
     "editor.mouseWheelZoom": true,
     "workbench.sideBar.experimental.fontSize": 16,
     "workbench.iconTheme": "catppuccin-mocha",
-    "python.analysis.typeCheckingMode": "standard",
-    "python.analysis.diagnosticMode": "workspace",
     "ruff.lint.select": [
         "F",
         "B",
@@ -17,14 +16,14 @@
     "E",
     "W"
     ],
-    "workbench.colorTheme": "Nordavind",
+    "workbench.colorTheme": "Wallust",
     "files.autoSave": "afterDelay",
     "editor.wordWrap": "on",
-    "editor.minimap.enabled": false,
     "workbench.editorAssociations": {
         "{git,gitlens,chat-editing-snapshot-text-model,copilot,git-graph,git-graph-3}:/**/*.qrc": "default",
         "*.pdf": "default",
-        "*.qrc": "qt-core.qrcEditor"
+        "*.qrc": "qt-core.qrcEditor",
+        "*.svg": "default"
     },
     "editor.codeLensFontFamily": "FiraCode Nerd Font Mono",
     "editor.inlayHints.fontFamily": "FiraCode Nerd Font Mono",
@@ -45,5 +44,8 @@
     "workbench.layoutControl.enabled": false,
     "workbench.browser.showInTitleBar": false,
     "workbench.panel.showLabels": false,
-    "terminal.integrated.initialHint": false
+    "terminal.integrated.initialHint": false,
+    "editor.minimap.enabled": false,
+    "workbench.navigationControl.enabled": false,
+    "window.commandCenter": false
 }

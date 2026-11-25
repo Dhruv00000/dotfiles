@@ -27,8 +27,8 @@ Rectangle {
     CustomComponents.NerdIcon {
         text: "󰀝"
         color: {
-            if (airplaneModeState.text.trim() === "yes") { return "#22c55e"; }
-            return "#ef4444";
+            if (airplaneModeState.text.trim() === "yes") { return Colours.success; }
+            return Colours.danger;
         }
     }
 
@@ -37,7 +37,7 @@ Rectangle {
         hoverEnabled: true
         cursorShape: Qt.PointingHandCursor
 
-        onEntered: notificationButton.color = Colors.dim_color
+        onEntered: notificationButton.color = Colours.surfaceHover
         onExited: notificationButton.color = "transparent"
 
         onClicked: {

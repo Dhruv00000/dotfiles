@@ -33,4 +33,4 @@ if [ -n "$FOCUSED_PID" ]; then
 fi
 
 
-notify-send --icon "/usr/share/icons/breeze-dark/apps/48/ktimer.svg" "$CMD finished executing" $'time taken: '"$DURATION"$'\nexit code: '"$EXIT_CODE"
+notify-send --icon "/usr/share/icons/breeze-dark/apps/48/ktimer.svg" "$CMD finished executing" $'time taken: '"$DURATION"$'\nexit code: '"$EXIT_CODE" --app-name "zsh"

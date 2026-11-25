@@ -11,7 +11,7 @@ fi
 grim -g "$REGION" "$FILE" || exit 1
 
 
-ACTION=$(notify-send "Screenshot Captured" "Copied to clipboard" --icon="$FILE" --action="edit=󰲶  annotate" --action="lens=  search" --action="scroll=  extend" --action="open=  view" --expire-time=5000)
+ACTION=$(notify-send "Screenshot Captured" "Copied to clipboard" --icon="$FILE" --action="edit=󰲶  annotate" --action="lens=  search" --action="scroll=  extend" --action="view=  open" --expire-time=5000 --app-name="Screenshot script")
 case "$ACTION" in
     "edit")
         satty --filename "$FILE" --output-filename "$FILE" --disable-notifications
@@ -29,11 +29,11 @@ case "$ACTION" in
         ;;
 
     "scroll")
-        notify-send "Scrolling Screenshot" "Select region and start scrolling" --expire-time=2000
+        notify-send "Scrolling Screenshot" "Select region and start scrolling" --expire-time=2000 --app-name="Screenshot script"
         wayscrollshot --output "$FILE"
         ;;
 
-    "open")
+    "view")
         xdg-open "$FILE"
         ;;
 esac

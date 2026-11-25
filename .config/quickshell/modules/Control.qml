@@ -16,14 +16,14 @@ Item {
         id: controlCenterButton
         anchors.centerIn: parent
         anchors.fill: parent
-        color: Colors.surface
+        color: "transparent"
 
         CustomComponents.NerdIcon {
             text: {
                 if (controlCenterMenu.visible) { return ""; }
                 return "";
             }
-            color: "white"
+            color: Colours.text
         }
 
         MouseArea {
@@ -31,7 +31,7 @@ Item {
             hoverEnabled: true
             cursorShape: Qt.PointingHandCursor
 
-            onEntered: controlCenterButton.color = Colors.dim_color
+            onEntered: controlCenterButton.color = Colours.surfaceHover
             onExited: controlCenterButton.color = "transparent"
 
             onClicked: { controlCenterMenu.visible = !controlCenterMenu.visible; }
@@ -65,7 +65,7 @@ Item {
 
         Rectangle {
 
-            color: Colors.surface
+            color: Colours.surface
             anchors.fill: parent
 
             ColumnLayout {
@@ -84,7 +84,7 @@ Item {
 
                         Text {
                             text: ""
-                            color: "white"
+                            color: Colours.text
                             font.family: "FiraCode Nerd Font"
                             font.pixelSize: 50
                             anchors.centerIn: parent
@@ -96,7 +96,7 @@ Item {
                             hoverEnabled: true
                             cursorShape: Qt.PointingHandCursor
 
-                            onEntered: wifiTile.color = Colors.dim_color
+                            onEntered: wifiTile.color = Colours.surfaceHover
                             onExited: wifiTile.color = "transparent"
 
                             onClicked: {
@@ -115,7 +115,7 @@ Item {
 
                         Text {
                             text: "󰂯"
-                            color: "white"
+                            color: Colours.text
                             font.family: "FiraCode Nerd Font"
                             font.pixelSize: 50
                             anchors.centerIn: parent
@@ -126,7 +126,7 @@ Item {
                             hoverEnabled: true
                             cursorShape: Qt.PointingHandCursor
 
-                            onEntered: bluetoothTile.color = Colors.dim_color
+                            onEntered: bluetoothTile.color = Colours.surfaceHover
                             onExited: bluetoothTile.color = "transparent"
 
                             onClicked: {
@@ -196,7 +196,7 @@ Item {
                                 if (volumeComponent.volumeValue < 0.5) { return "󰖀"; }
                                 return "󰕾";
                             }
-                            color: "white"
+                            color: Colours.text
                             font.family: "FiraCode Nerd Font"
                             font.pixelSize: 26
                             anchors.centerIn: parent
@@ -207,7 +207,7 @@ Item {
                             hoverEnabled: true
                             cursorShape: Qt.PointingHandCursor
 
-                            onEntered: muteButton.color = Colors.dim_color
+                            onEntered: muteButton.color = Colours.surfaceHover
                             onExited: muteButton.color = "transparent"
 
                             onClicked: { muteToggleProcess.running = true; }
@@ -231,12 +231,12 @@ Item {
                             width: volumeSlider.availableWidth
                             height: implicitHeight
                             radius: 3
-                            color: "#313244"
+                            color: Colours.track
 
                             Rectangle {
                                 width: volumeSlider.visualPosition * parent.width
                                 height: parent.height
-                                color: Colors.primary
+                                color: Colours.accent
                                 radius: 3
                             }
                         }
@@ -246,7 +246,7 @@ Item {
                             implicitWidth: 16
                             implicitHeight: 16
                             radius: 8
-                            color: volumeSlider.pressed ? "#b4befe" : "#ffffff"
+                            color: volumeSlider.pressed ? Colours.handlePressed : Colours.handle
                             Behavior on color {
                                 ColorAnimation { duration: 100 }
                             }
@@ -270,7 +270,7 @@ Item {
 
                         Text {
                             text: ""
-                            color: "white"
+                            color: Colours.text
                             font.family: "FiraCode Nerd Font"
                             font.pixelSize: 22
                             anchors.centerIn: parent
@@ -281,7 +281,7 @@ Item {
                             hoverEnabled: true
                             cursorShape: Qt.PointingHandCursor
 
-                            onEntered: mixerButton.color = Colors.dim_color
+                            onEntered: mixerButton.color = Colours.surfaceHover
                             onExited: mixerButton.color = "transparent"
 
                             onClicked: {
@@ -321,7 +321,7 @@ Item {
                     CustomComponents.Spacer {}
                     Text {
                         text: "󰃞"
-                        color: "white"
+                        color: Colours.text
                         font.family: "FiraCode Nerd Font"
                         font.pixelSize: 22
                     }
@@ -342,12 +342,12 @@ Item {
                             width: brightnessSlider.availableWidth
                             height: implicitHeight
                             radius: 3
-                            color: "#313244"
+                            color: Colours.track
 
                             Rectangle {
                                 width: brightnessSlider.visualPosition * parent.width
                                 height: parent.height
-                                color: Colors.primary
+                                color: Colours.accent
                                 radius: 3
                             }
                         }
@@ -357,7 +357,7 @@ Item {
                             implicitWidth: 16
                             implicitHeight: 16
                             radius: 8
-                            color: brightnessSlider.pressed ? "#b4befe" : "#ffffff"
+                            color: brightnessSlider.pressed ? Colours.handlePressed : Colours.handle
 
                             Behavior on color {
                                 ColorAnimation { duration: 100 }
@@ -384,9 +384,9 @@ Item {
         }
 
         component ControlCenterTile: Rectangle {
-            color: Colors.surface
+            color: Colours.surface
             radius: 10
-            border.color: "white"
+            border.color: Colours.border
             border.width: 2
             implicitHeight: 100
             implicitWidth: 100

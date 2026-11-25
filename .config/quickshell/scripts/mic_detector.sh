@@ -7,12 +7,12 @@ if [[ "$MUTE_STATUS" == *"[MUTED]"* ]]; then
     APPS=""
 else
     DEFAULT_SOURCE=$(pactl get-default-source)
-    STATE=$(pactl list sources | grep -B 2 "Name: $DEFAULT_SOURCE" | grep "State:" | head -n 1 | awk '{print $2}')
+    STATE=$(pactl list sources | grep --before-context 2 "Name: $DEFAULT_SOURCE" | grep "State:" | head --lines 1 | awk '{print $2}')
 
     if [ "$STATE" == "RUNNING" ]; then
         STATUS="in-use"
 
-        APPS=$(pactl list source-outputs | grep "application.name =" | cut -d '"' -f 2 | sort -u | paste -sd ", " -)
+        APPS=$(pactl list source-outputs | grep "application.name =" | cut --delimiter '"' --fields 2 | sort --unique | paste --serial --delimiters ", " -)
     else
         STATUS="enabled"
         APPS=""

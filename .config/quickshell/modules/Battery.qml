@@ -23,7 +23,7 @@ RowLayout {
             width: 32
             height: 20
             color: "transparent"
-            border.color: "#64748b"
+            border.color: Colours.border
             border.width: 2
         }
         Rectangle {
@@ -31,7 +31,7 @@ RowLayout {
             y: 6
             width: 3
             height: 8
-            color: "#64748b"
+            color: Colours.border
 
         }
         Rectangle {
@@ -43,9 +43,9 @@ RowLayout {
             radius: 2
 
             color: {
-                if (batteryIcon.percentage < 30) { return "#ef4444"; }
-                if (batteryIcon.percentage < 50) { return "#eab308"; }
-                return "#22c55e";
+                if (batteryIcon.percentage < 30) { return Colours.danger; }
+                if (batteryIcon.percentage < 50) { return Colours.warning; }
+                return Colours.success;
             }
 
             Behavior on width {
@@ -69,8 +69,8 @@ RowLayout {
             return "!";
         }
         color: {
-            if (UPower.onBattery && !isSmartCharged) { return "#ef4444"; }
-            return "#22c55e";
+            if (UPower.onBattery && !isSmartCharged) { return Colours.danger; }
+            return Colours.success;
         }
         font.pixelSize: 20
     }
@@ -78,7 +78,7 @@ RowLayout {
     Text {
         text: batteryIcon.percentage + "%"
         horizontalAlignment: Text.AlignHCenter
-        color: "white"
+        color: Colours.text
         font.family: "JetBrainsMono Propo"
         font.weight: 500
         font.pixelSize: 15

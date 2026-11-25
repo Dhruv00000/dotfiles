@@ -7,7 +7,7 @@ run_app() {
     shift
     (
         if ! "$@" >> "$HOME/system_log.txt" 2>&1; then
-            ACTION=$(notify-send "Niri startup log" "Failed to $LABEL." --wait --icon dialog-error --action="logfile=󱪗  Open log" --expire-time=5000)
+            ACTION=$(notify-send "Niri startup log" "Failed to $LABEL." --wait --icon dialog-error --action="logfile=󱪗  Open log" --expire-time=5000 --app-name="Startup script")
             if [[ "$ACTION" == "logfile" ]]; then
                 xdg-open "$HOME/system_log.txt"
             fi
@@ -15,7 +15,6 @@ run_app() {
     ) &
 }
 
-run_app "set colour scheme" "$HOME/scripts/colour_scheme_picker.sh"
 run_app "clean trash" "$HOME/scripts/file_cleaner.sh"
 run_app "start sunsetr" sunsetr
 run_app "start swayidle" swayidle
@@ -23,3 +22,4 @@ run_app "start quickshell" quickshell
 run_app "start bongocat" bongocat --watch-config
 run_app "start hyprpolkitagent" systemctl --user start hyprpolkitagent
 run_app "clear evalcache" command rm -rf "$ZSH_EVALCACHE_DIR" # evalcache doesnt update its cache until it is cleared.
+run_app "apply colour schemes" ~/scripts/colour_scheme_picker.sh

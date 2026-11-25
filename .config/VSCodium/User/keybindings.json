@@ -19,5 +19,4 @@
         "command": "-workbench.action.browser.goForward",
         "when": "browserCanGoForward && activeEditor == 'workbench.editor.browser'"
     }
-    
 ]

@@ -1,0 +1,11 @@
+{
+  "theme": {
+    "mode": 1,
+    "engine": "dynamicTheme",
+    "darkSchemeBackgroundColor": "{{background}}",
+    "darkSchemeTextColor": "{{foreground}}",
+    "lightSchemeBackgroundColor": "{{background}}",
+    "lightSchemeTextColor": "{{foreground}}"
+  },
+  "detectDarkTheme": false
+}

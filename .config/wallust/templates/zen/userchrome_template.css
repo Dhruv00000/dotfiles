@@ -1,0 +1,385 @@
+:root,
+#main-window,
+zen-workspace,
+#browser {
+
+    --zen-primary-color: {{color4}} !important;
+    --zen-colors-primary: {{color4}} !important;
+    --zen-colors-secondary: {{color6}} !important;
+    --zen-colors-tertiary: {{color0}} !important;
+    --zen-colors-border: {{color8}} !important;
+    --zen-colors-hover-bg: {{color8}} !important;
+    --zen-colors-input-bg: {{color0}} !important;
+    --zen-colors-primary-foreground: {{background}} !important;
+    --zen-main-browser-background: {{background}} !important;
+    --zen-main-browser-background-toolbar: {{background}} !important;
+    --zen-navigator-toolbox-background: {{background}} !important;
+    --zen-themed-toolbar-bg: {{background}} !important;
+    --zen-themed-toolbar-bg-transparent: {{background}} !important;
+    --zen-toolbar-element-bg: {{color0}} !important;
+    --zen-toolbar-element-bg-hover: {{color8}} !important;
+    --zen-urlbar-background: {{color0}} !important;
+    --zen-sidebar-themed-icon-fill: {{foreground}} !important;
+    --zen-dialog-background: {{color0}} !important;
+
+    --lwt-accent-color: {{background}} !important;
+    --lwt-text-color: {{foreground}} !important;
+    --toolbox-textcolor: {{foreground}} !important;
+    --toolbox-textcolor-inactive: {{color7}} !important;
+    --toolbar-bgcolor: {{background}} !important;
+    --toolbar-color: {{foreground}} !important;
+    --toolbarbutton-icon-fill: {{foreground}} !important;
+    --toolbar-field-background-color: {{color0}} !important;
+    --toolbar-field-color: {{foreground}} !important;
+    --toolbar-field-border-color: {{color8}} !important;
+    --toolbar-field-focus-background-color: {{color0}} !important;
+    --toolbar-field-focus-color: {{foreground}} !important;
+    --tab-selected-bgcolor: {{color0}} !important;
+    --tab-selected-textcolor: {{foreground}} !important;
+    --arrowpanel-background: {{color0}} !important;
+    --arrowpanel-color: {{foreground}} !important;
+    --arrowpanel-border-color: {{color8}} !important;
+    --panel-background: {{color0}} !important;
+    --panel-color: {{foreground}} !important;
+    --panel-border-color: {{color8}} !important;
+
+    --zen-border-radius: 0px !important;
+    --zen-webview-border-radius: 0px !important;
+    --zen-native-inner-radius: 0px !important;
+    --tab-border-radius: 0px !important;
+    --toolbarbutton-border-radius: 0px !important;
+    --urlbar-icon-border-radius: 0px !important;
+    --button-border-radius: 0px !important;
+    --border-radius-small: 0px !important;
+    --border-radius-medium: 0px !important;
+    --border-radius-large: 0px !important;
+    --panel-border-radius: 0px !important;
+    --arrowpanel-border-radius: 0px !important;
+    --tooltip-border-radius: 0px !important;
+
+}
+
+
+#zen-browser-background,
+#zen-browser-background::before,
+#zen-browser-background::after,
+.zen-browser-generic-background,
+.zen-browser-generic-background::before,
+.zen-browser-generic-background::after {
+    background: {{background}} !important;
+    background-color: {{background}} !important;
+    background-image: none !important;
+    opacity: 1 !important;
+}
+
+
+#main-window,
+#browser,
+#zen-appcontent-wrapper,
+#zen-tabbox-wrapper,
+#navigator-toolbox,
+#titlebar,
+#TabsToolbar,
+#nav-bar,
+#nav-bar-customization-target,
+#zen-appcontent-navbar-container,
+#PersonalToolbar,
+#PlacesToolbar,
+#zen-tabs-wrapper,
+#tabbrowser-tabs,
+#zen-essentials,
+.zen-workspace-tabs-section,
+#zen-current-workspace-indicator,
+#zen-sidebar-top-buttons,
+#zen-sidebar-bottom-buttons,
+#zen-sidebar-foot-buttons,
+#sidebar-box,
+#sidebar-header,
+#zen-sidebar-web-panel,
+findbar {
+    background-color: {{background}} !important;
+    background-image: none !important;
+    color: {{foreground}} !important;
+    border-color: {{color8}} !important;
+}
+
+
+.tabbrowser-tab,
+.tabbrowser-tab .tab-stack,
+.tabbrowser-tab .tab-background,
+.tabbrowser-tab[zen-glance-tab="true"] .tab-background,
+.tab-icon-image,
+.tab-icon-overlay,
+tab-group,
+.tab-group-label,
+.tab-group-container::after,
+toolbarbutton,
+.toolbarbutton-icon,
+.toolbarbutton-badge-stack,
+#zen-workspaces-button,
+.zen-workspace-button,
+#urlbar,
+#urlbar-background,
+#urlbar-input-container,
+.urlbarView,
+.urlbarView-row,
+.urlbar-page-action,
+.identity-box-button,
+#PlacesToolbarItems > .bookmark-item,
+.browserSidebarContainer,
+.browserContainer,
+browser,
+menupopup,
+panel,
+menuitem,
+menu,
+findbar,
+#statuspanel-label {
+    border-radius: 0px !important;
+}
+
+
+toolbarbutton,
+.toolbarbutton-icon,
+.toolbarbutton-text,
+#PlacesToolbarItems > .bookmark-item,
+#zen-workspaces-button,
+.zen-workspace-button {
+    color: {{foreground}} !important;
+    fill: {{foreground}} !important;
+}
+
+toolbarbutton:hover,
+toolbarbutton:hover .toolbarbutton-icon,
+toolbarbutton:hover .toolbarbutton-text,
+#PlacesToolbarItems > .bookmark-item:hover,
+#PlacesToolbarItems > .bookmark-item:hover .toolbarbutton-icon,
+#PlacesToolbarItems > .bookmark-item:hover .toolbarbutton-text,
+#zen-workspaces-button:hover,
+.zen-workspace-button:hover,
+.zen-workspace-button:hover .zen-workspace-icon {
+    background-color: {{color8}} !important;
+    color: {{background}} !important;
+    fill: {{background}} !important;
+}
+
+
+.tabbrowser-tab,
+.tab-label,
+.tab-close-button {
+    color: {{foreground}} !important;
+    fill: {{foreground}} !important;
+}
+
+.tabbrowser-tab .tab-background {
+    background-color: transparent !important;
+}
+
+.tabbrowser-tab:hover .tab-background {
+    background-color: {{color8}} !important;
+}
+
+.tabbrowser-tab:hover,
+.tabbrowser-tab:hover .tab-label,
+.tabbrowser-tab:hover .tab-close-button {
+    color: {{background}} !important;
+    fill: {{background}} !important;
+}
+
+.tabbrowser-tab[selected] .tab-background,
+.tabbrowser-tab[visuallyselected] .tab-background,
+.tabbrowser-tab[zen-glance-tab="true"] .tab-background {
+    background-color: {{color0}} !important;
+    border: 2px solid {{color4}} !important;
+}
+
+.tabbrowser-tab[selected],
+.tabbrowser-tab[selected] .tab-label,
+.tabbrowser-tab[selected] .tab-close-button,
+.tabbrowser-tab[visuallyselected],
+.tabbrowser-tab[visuallyselected] .tab-label,
+.tabbrowser-tab[visuallyselected] .tab-close-button {
+    color: {{foreground}} !important;
+    fill: {{foreground}} !important;
+}
+
+tab-group,
+.tab-group-label,
+.tab-group-label-container label,
+.zen-workspace-button[active="true"] .zen-workspace-icon {
+    color: {{color4}} !important;
+    fill: {{color4}} !important;
+}
+
+
+#urlbar,
+#urlbar[breakout-extend="true"],
+#urlbar[zen-floating-urlbar="true"] {
+    z-index: 1 !important;
+    background-color: {{color0}} !important;
+    border: 1px solid {{color8}} !important;
+    border-radius: 0px !important;
+    box-shadow: none !important;
+    box-sizing: border-box !important;
+    --urlbar-box-bgcolor: {{color0}} !important;
+    --urlbar-box-hover-bgcolor: {{color8}} !important;
+    --urlbar-box-active-bgcolor: {{color8}} !important;
+    --urlbar-box-focus-bgcolor: {{color8}} !important;
+    --urlbar-box-text-color: {{foreground}} !important;
+    --urlbar-box-hover-text-color: {{background}} !important;
+    --urlbar-box-active-text-color: {{background}} !important;
+    --urlbarView-hover-background: {{color8}} !important;
+    --urlbarView-highlight-background: {{color8}} !important;
+    --urlbarView-highlight-color: {{background}} !important;
+    --urlbarView-separator-color: {{color8}} !important;
+    --zen-urlbar-background: {{color0}} !important;
+    --zen-urlbar-background-floating: {{color0}} !important;
+}
+
+#urlbar[focused="true"],
+#urlbar[open] {
+    border: 1px solid {{color4}} !important;
+}
+
+.urlbar-background,
+#urlbar-background,
+#urlbar:not([focused]):not(:hover) > .urlbar-background,
+#urlbar:not([focused]):not(:hover) > #urlbar-background,
+#urlbar[breakout-extend="true"] > .urlbar-background,
+#urlbar[breakout-extend="true"] > #urlbar-background,
+#urlbar[zen-floating-urlbar="true"] > .urlbar-background,
+#urlbar[zen-floating-urlbar="true"] > #urlbar-background {
+    opacity: 1 !important;
+    visibility: visible !important;
+    background-color: {{color0}} !important;
+    background-image: none !important;
+    backdrop-filter: none !important;
+    border: none !important;
+    border-radius: 0px !important;
+    box-shadow: none !important;
+}
+
+#identity-box:hover,
+#identity-box:hover *,
+.identity-box-button:hover,
+.identity-box-button:hover *,
+#tracking-protection-icon-container:hover,
+#tracking-protection-icon-container:hover *,
+.urlbar-page-action:hover,
+.urlbar-page-action:hover *,
+#urlbar-go-button:hover,
+#urlbar-go-button:hover *,
+#urlbar-searchmode-switcher:hover,
+#urlbar-searchmode-switcher:hover *,
+.urlbar-icon:hover {
+    background-color: {{color8}} !important;
+    color: {{background}} !important;
+    fill: {{background}} !important;
+    border-radius: 0px !important;
+}
+
+.urlbarView,
+.urlbarView-body-outer,
+.urlbarView-body-inner,
+.urlbarView-results,
+#urlbar .search-one-offs,
+.search-one-offs,
+.search-panel-one-offs {
+    background-color: {{color0}} !important;
+    background-image: none !important;
+    color: {{foreground}} !important;
+    border-color: {{color8}} !important;
+    border-radius: 0px !important;
+}
+
+.urlbarView-row,
+.urlbarView-row-inner,
+.urlbarView-action,
+.urlbarView-button,
+.searchbar-engine-one-off-item,
+#urlbar-anon-search-settings,
+#urlbar-search-mode-indicator,
+#urlbar-label-box {
+    border-radius: 0px !important;
+}
+
+#urlbar-input,
+.urlbarView-title,
+.search-panel-one-offs-header-label {
+    color: {{foreground}} !important;
+}
+
+.urlbarView-url {
+    color: {{color4}} !important;
+}
+
+.urlbarView-row:hover,
+.urlbarView-row:hover > .urlbarView-row-inner,
+.urlbarView-row[selected],
+.urlbarView-row[selected] > .urlbarView-row-inner,
+.urlbarView-button:hover,
+.searchbar-engine-one-off-item:hover,
+.searchbar-engine-one-off-item[selected],
+#urlbar-anon-search-settings:hover {
+    background-color: {{color8}} !important;
+    color: {{background}} !important;
+    fill: {{background}} !important;
+}
+
+.urlbarView-row:hover *,
+.urlbarView-row[selected] *,
+.urlbarView-button:hover *,
+.searchbar-engine-one-off-item:hover *,
+.searchbar-engine-one-off-item[selected] *,
+#urlbar-anon-search-settings:hover * {
+    color: {{background}} !important;
+    fill: {{background}} !important;
+}
+
+
+menupopup,
+panel:not(.autoscroller),
+findbar,
+#statuspanel-label {
+    --panel-background: {{color0}} !important;
+    --panel-color: {{foreground}} !important;
+    --panel-border-color: {{color8}} !important;
+    background-color: {{color0}} !important;
+    color: {{foreground}} !important;
+    border: 1px solid {{color8}} !important;
+    border-radius: 0px !important;
+}
+
+panel.autoscroller,
+.autoscroller {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+menuitem,
+menu {
+    color: {{foreground}} !important;
+}
+
+menuitem:hover,
+menu:hover {
+    background-color: {{color8}} !important;
+    color: {{background}} !important;
+}
+
+
+:root:not([inDOMFullscreen="true"]) #zen-appcontent-wrapper,
+:root:not([inDOMFullscreen="true"]) #zen-tabbox-wrapper,
+:root:not([inDOMFullscreen="true"]) #tabbrowser-tabpanels {
+    --zen-element-separation: 0px !important;
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+:root:not([inDOMFullscreen="true"]) #tabbrowser-tabpanels .browserSidebarContainer {
+    border: 1px solid {{color8}} !important;
+    margin: 0px !important;
+    box-sizing: border-box !important;
+}

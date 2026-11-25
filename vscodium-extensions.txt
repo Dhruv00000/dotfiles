@@ -8,6 +8,7 @@ kamikillerto.vscode-colorize
 ms-python.debugpy
 ms-python.python
 ms-python.vscode-python-envs
+saatvik333.wallust-theme
 sapegin.todo-tomorrow
 tamasfe.even-better-toml
 texarkanine.termeleon

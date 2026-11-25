@@ -1,0 +1,113 @@
+:root {
+
+    --zen-primary-color: {{color4}} !important;
+    --zen-colors-primary: {{color4}} !important;
+    --zen-colors-secondary: {{color6}} !important;
+    --zen-colors-tertiary: {{color0}} !important;
+    --zen-colors-border: {{color8}} !important;
+    --zen-colors-hover-bg: {{color8}} !important;
+    --zen-colors-input-bg: {{color0}} !important;
+    --zen-colors-primary-foreground: {{background}} !important;
+    --zen-main-browser-background: {{background}} !important;
+    --zen-main-browser-background-toolbar: {{background}} !important;
+    --zen-navigator-toolbox-background: {{background}} !important;
+    --zen-themed-toolbar-bg: {{background}} !important;
+    --zen-themed-toolbar-bg-transparent: {{background}} !important;
+    --zen-toolbar-element-bg: {{color0}} !important;
+    --zen-toolbar-element-bg-hover: {{color8}} !important;
+    --zen-urlbar-background: {{color0}} !important;
+    --zen-sidebar-themed-icon-fill: {{foreground}} !important;
+    --zen-dialog-background: {{color0}} !important;
+
+    --lwt-accent-color: {{background}} !important;
+    --lwt-text-color: {{foreground}} !important;
+    --toolbox-textcolor: {{foreground}} !important;
+    --toolbox-textcolor-inactive: {{color7}} !important;
+    --toolbar-bgcolor: {{background}} !important;
+    --toolbar-color: {{foreground}} !important;
+    --toolbar-field-background-color: {{color0}} !important;
+    --toolbar-field-color: {{foreground}} !important;
+    --toolbar-field-border-color: {{color8}} !important;
+    --toolbar-field-focus-background-color: {{color0}} !important;
+    --toolbar-field-focus-color: {{foreground}} !important;
+    --arrowpanel-background: {{color0}} !important;
+    --arrowpanel-color: {{foreground}} !important;
+    --arrowpanel-border-color: {{color8}} !important;
+    --panel-background: {{color0}} !important;
+    --panel-color: {{foreground}} !important;
+    --panel-border-color: {{color8}} !important;
+
+}
+
+#main-window,
+#zen-browser-background,
+.zen-browser-generic-background {
+    --zen-main-browser-background: {{background}} !important;
+    --zen-main-browser-background-toolbar: {{background}} !important;
+    --zen-themed-toolbar-bg: {{background}} !important;
+    background-color: {{background}} !important;
+    background-image: none !important;
+}
+
+#zen-browser-background::after,
+.zen-browser-generic-background::after {
+    background: {{background}} !important;
+    background-color: {{background}} !important;
+    background-image: none !important;
+    opacity: 1 !important;
+}
+
+#navigator-toolbox,
+#nav-bar,
+#PersonalToolbar,
+#zen-appcontent-navbar-container,
+#zen-sidebar-top-buttons,
+#zen-sidebar-bottom-buttons,
+zen-workspace {
+    background-color: {{background}} !important;
+    color: {{foreground}} !important;
+    border-color: {{color8}} !important;
+}
+
+.tabbrowser-tab {
+    color: {{foreground}} !important;
+}
+
+.tabbrowser-tab:hover .tab-background,
+.zen-workspace-button:hover,
+#zen-workspaces-button:hover,
+toolbarbutton:hover {
+    background-color: {{color8}} !important;
+}
+
+.tabbrowser-tab[selected] .tab-background,
+.tabbrowser-tab[visuallyselected] .tab-background {
+    background-color: {{color0}} !important;
+    border: 1px solid {{color4}} !important;
+}
+
+.tab-group-label,
+.tab-group-label-container label,
+.zen-workspace-button[active="true"] {
+    color: {{color4}} !important;
+}
+
+menupopup,
+panel {
+    --panel-background: {{color0}} !important;
+    --panel-color: {{foreground}} !important;
+    --panel-border-color: {{color8}} !important;
+    background-color: {{color0}} !important;
+    color: {{foreground}} !important;
+}
+
+menuitem:hover,
+menu:hover {
+    background-color: {{color8}} !important;
+    color: {{foreground}} !important;
+}
+
+*::selection {
+    background-color: {{color4}} !important;
+    color: {{background}} !important;
+}

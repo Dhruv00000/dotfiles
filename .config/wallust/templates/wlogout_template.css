@@ -1,0 +1,9 @@
+@define-color background {{background}};
+@define-color overlay alpha(@background, 0.85);
+@define-color surface {{color0}};
+@define-color surface_hover {{color8}};
+@define-color foreground {{foreground}};
+@define-color border {{color8}};
+@define-color accent {{color4}};
+@define-color accent_alt {{color6}};
+@define-color danger {{color1}};

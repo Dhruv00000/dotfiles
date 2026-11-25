@@ -9,7 +9,7 @@ ShellRoot {
     component PillRectangle: Rectangle {
         radius: 10
         Layout.fillHeight: true
-        color: Colors.surface
+        color: Colours.background
     }
 
     component NerdIcon: Text {

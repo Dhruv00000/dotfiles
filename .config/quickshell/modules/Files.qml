@@ -15,14 +15,14 @@ Item {
         id: filesButton
         anchors.centerIn: parent
         anchors.fill: parent
-        color: Colors.surface
+        color: "transparent"
 
         CustomComponents.NerdIcon {
             text: {
                 if (filesMenu.visible) { return ""; }
                 return "";
             }
-            color: "white"
+            color: Colours.text
         }
 
         MouseArea {
@@ -30,7 +30,7 @@ Item {
             hoverEnabled: true
             cursorShape: Qt.PointingHandCursor
 
-            onEntered: filesButton.color = Colors.dim_color
+            onEntered: filesButton.color = Colours.surfaceHover
             onExited: filesButton.color = "transparent"
 
             onClicked: { filesMenu.visible = !filesMenu.visible; }
@@ -57,7 +57,7 @@ Item {
 
         Rectangle {
 
-            color: Colors.surface
+            color: Colours.surface
             anchors.fill: parent
 
             GridLayout {
@@ -90,8 +90,8 @@ Item {
 
             implicitWidth: 100
             implicitHeight: 100
-            color: Colors.surface
-            border.color: "white"
+            color: Colours.surface
+            border.color: Colours.border
             border.width: 2
 
             property string folderPath
@@ -100,7 +100,7 @@ Item {
             Text {
                 text: parent.folderSymbol
                 anchors.centerIn: parent
-                color: "white"
+                color: Colours.text
                 font.family: "FiraCode Nerd Font"
                 font.pixelSize: 40
             }
@@ -110,7 +110,7 @@ Item {
                 hoverEnabled: true
                 cursorShape: Qt.PointingHandCursor
 
-                onEntered: parent.color = Colors.dim_color
+                onEntered: parent.color = Colours.surfaceHover
                 onExited: parent.color = "transparent"
 
                 onClicked: {

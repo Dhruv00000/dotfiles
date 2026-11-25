@@ -35,7 +35,7 @@ RowLayout {
 
     CustomComponents.NerdIcon {
 
-        Layout.alignment: Qt.ef4444AlignVCenter
+        Layout.alignment: Qt.AlignVCenter
 
         text: {
             if (networkModule.connectionType === "ethernet") {
@@ -52,14 +52,14 @@ RowLayout {
 
         color: {
             if (networkModule.connectionType === "ethernet") {
-                return "#22c55e";
+                return Colours.success;
             }
             if (networkModule.connectionType === "wifi") {
-                if (networkModule.signalStrength < 25) { return "#ef4444"; }
-                if (networkModule.signalStrength < 50) { return "#eab308"; }
-                return "#22c55e";
+                if (networkModule.signalStrength < 25) { return Colours.danger; }
+                if (networkModule.signalStrength < 50) { return Colours.warning; }
+                return Colours.success;
             }
-            return "#ef4444"
+            return Colours.danger
         }
 
     }

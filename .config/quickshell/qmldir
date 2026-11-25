@@ -1,2 +1,2 @@
-singleton Colors Colors.qml
+singleton Colours Colours.qml
 singleton CustomComponents components.qml

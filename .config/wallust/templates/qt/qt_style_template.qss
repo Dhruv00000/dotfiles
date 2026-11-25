@@ -1,0 +1,204 @@
+QWidget {
+    border-radius: 0px;
+}
+
+QMainWindow,
+QDialog,
+QFrame,
+QStackedWidget,
+QSplitter {
+    background-color: {{background}};
+    color: {{foreground}};
+}
+
+
+QMenuBar,
+QToolBar,
+QStatusBar {
+    background-color: {{color0}};
+    color: {{foreground}};
+    border-bottom: 1px solid {{color8}};
+    spacing: 4px;
+}
+
+QStatusBar {
+    border-top: 1px solid {{color8}};
+    border-bottom: none;
+}
+
+QMenuBar::item {
+    background: transparent;
+    padding: 4px 8px;
+}
+
+QMenuBar::item:selected,
+QMenuBar::item:pressed {
+    background-color: {{color8}};
+    color: {{background}};
+}
+
+
+QMenu {
+    background-color: {{color0}};
+    color: {{foreground}};
+    border: 1px solid {{color8}};
+    padding: 2px;
+}
+
+QMenu::item {
+    padding: 5px 20px 5px 10px;
+}
+
+QMenu::item:selected {
+    background-color: {{color8}};
+    color: {{background}};
+}
+
+QMenu::separator {
+    height: 1px;
+    background: {{color8}};
+    margin: 4px 0px;
+}
+
+
+QPushButton,
+QToolButton {
+    background-color: {{color0}};
+    color: {{foreground}};
+    border: 1px solid {{color8}};
+    border-radius: 0px;
+    padding: 5px 12px;
+}
+
+QPushButton:hover,
+QToolButton:hover {
+    background-color: {{color8}};
+    color: {{background}};
+    border-color: {{color4}};
+}
+
+QPushButton:pressed,
+QPushButton:checked,
+QToolButton:pressed,
+QToolButton:checked {
+    background-color: {{color4}};
+    color: {{background}};
+    border-color: {{color4}};
+}
+
+
+QLineEdit,
+QTextEdit,
+QPlainTextEdit,
+QSpinBox,
+QDoubleSpinBox,
+QComboBox {
+    background-color: {{color0}};
+    color: {{foreground}};
+    border: 1px solid {{color8}};
+    border-radius: 0px;
+    padding: 4px 6px;
+    selection-background-color: {{color4}};
+    selection-color: {{background}};
+}
+
+QLineEdit:focus,
+QTextEdit:focus,
+QPlainTextEdit:focus,
+QSpinBox:focus,
+QDoubleSpinBox:focus,
+QComboBox:focus,
+QComboBox:on {
+    border-color: {{color4}};
+}
+
+QComboBox QAbstractItemView {
+    background-color: {{color0}};
+    color: {{foreground}};
+    border: 1px solid {{color8}};
+    selection-background-color: {{color8}};
+    selection-color: {{background}};
+}
+
+
+QListView,
+QTreeView,
+QTableView {
+    background-color: {{background}};
+    alternate-background-color: {{color0}};
+    color: {{foreground}};
+    border: 1px solid {{color8}};
+    gridline-color: {{color8}};
+    outline: 0;
+}
+
+QListView::item:hover,
+QTreeView::item:hover,
+QTableView::item:hover {
+    background-color: {{color8}};
+    color: {{background}};
+}
+
+QListView::item:selected,
+QTreeView::item:selected,
+QTableView::item:selected {
+    background-color: {{color4}};
+    color: {{background}};
+}
+
+QHeaderView::section {
+    background-color: {{color0}};
+    color: {{foreground}};
+    border: none;
+    border-right: 1px solid {{color8}};
+    border-bottom: 1px solid {{color8}};
+    padding: 4px 8px;
+}
+
+
+QTabWidget::pane {
+    border: 1px solid {{color8}};
+    background-color: {{background}};
+}
+
+QTabBar::tab {
+    background-color: {{color0}};
+    color: {{foreground}};
+    border: 1px solid {{color8}};
+    border-radius: 0px;
+    padding: 5px 12px;
+}
+
+QTabBar::tab:hover {
+    background-color: {{color8}};
+    color: {{background}};
+}
+
+QTabBar::tab:selected {
+    background-color: {{background}};
+    color: {{foreground}};
+    border-color: {{color4}};
+}
+
+
+QGroupBox {
+    border: 1px solid {{color8}};
+    border-radius: 0px;
+    margin-top: 8px;
+    padding-top: 8px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 8px;
+    padding: 0 4px;
+    color: {{color4}};
+}
+
+QToolTip {
+    background-color: {{color0}};
+    color: {{foreground}};
+    border: 1px solid {{color8}};
+    border-radius: 0px;
+    padding: 4px;
+}

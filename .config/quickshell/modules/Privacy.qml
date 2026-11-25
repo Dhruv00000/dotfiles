@@ -61,9 +61,9 @@ RowLayout {
         }
 
         color: {
-            if (privacyIndicator.micData.status === "disabled") { return "#ef4444"; }
-            if (privacyIndicator.micData.status === "in-use") { return "#22c55e"; }
-            return "#f8f8f2";
+            if (privacyIndicator.micData.status === "disabled") { return Colours.danger; }
+            if (privacyIndicator.micData.status === "in-use") { return Colours.success; }
+            return Colours.text;
         }
 
         font.family: "FiraCode Nerd Font"
@@ -88,9 +88,9 @@ RowLayout {
         }
 
         color: {
-            if (privacyIndicator.cameraData.status === "disabled") { return "#ef4444"; }
-            if (privacyIndicator.cameraData.status === "in-use") { return "#22c55e"; }
-            return "#f8f8f2";
+            if (privacyIndicator.cameraData.status === "disabled") { return Colours.danger; }
+            if (privacyIndicator.cameraData.status === "in-use") { return Colours.success; }
+            return Colours.text;
         }
 
         font.family: "FiraCode Nerd Font"

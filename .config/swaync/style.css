@@ -1,3 +1,83 @@
+@import url("/etc/xdg/swaync/style.css");
+@import "colours.css";
+
+:root {
+    --cc-bg: @background;
+    --noti-bg-opaque: @background;
+    --noti-bg-darker: @color0;
+    --noti-bg-hover: @color8;
+    --noti-bg-focus: @color0;
+    --noti-bg-alpha: 1;
+    --noti-border-color: @color8;
+    --noti-close-bg: @color8;
+    --noti-close-bg-hover: @color1;
+    --text-color: @foreground;
+    --text-color-disabled: @color8;
+    --bg-selected: @color4;
+    --border-radius: 0px;
+}
+
+.notification-row .notification-background .notification,
+.floating-notifications .notification,
+.control-center .notification-row .notification-background .notification {
+    background: @background;
+    border-radius: 0px;
+}
+
+.notification-row .notification-background .notification:hover {
+    background: @color0;
+}
+
+.control-center {
+    background: @background;
+    border: 1px solid @color8;
+    border-radius: 0px;
+}
+
+.notification-row .notification-background .notification .notification-default-action {
+    padding: 12px 16px;
+    margin: 0;
+    border-radius: 0px;
+}
+
+.notification-row .notification-background .notification .notification-default-action:hover {
+    background: @color0;
+}
+
+.widget-title > button {
+    background: @color0;
+    color: @foreground;
+    border: 1px solid @color8;
+    border-radius: 0px;
+}
+
+.widget-title > button:hover {
+    background: @color8;
+    color: @background;
+    border: 1px solid @color4;
+}
+
+.widget-dnd > switch {
+    background: @color0;
+    border: 1px solid @color8;
+    border-radius: 0px;
+}
+
+.widget-dnd > switch:hover {
+    border: 1px solid @color4;
+}
+
+.widget-dnd > switch:checked {
+    background: @color4;
+    border: 1px solid @color4;
+}
+
+.widget-dnd > switch slider {
+    background: @foreground;
+    border-radius: 0px;
+}
+
+
 * {
     font-family: "FiraCode Nerd Font";
 }
